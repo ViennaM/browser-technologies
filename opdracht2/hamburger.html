@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hamburger</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eee;
+      margin: 0;
+      font-family: sans-serif;
+      color: #777;
+      letter-spacing: .03em;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    nav {
+      min-height: 32px;
+      min-height: 2em;
+      padding: .5em;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav>a {
+      display: inline-block;
+      padding: .5em;
+      border-radius: 5px;
+      background: #000;
+    }
+
+    img {
+      color: #ffffff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      display: flex;
+      float: right;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    li a {
+      padding: .5em 1em;
+      text-decoration: none;
+      color: #555;
+    }
+
+    li a:hover, li a:focus {
+      color: #777;
+    }
+
+    button {
+      background: transparent;
+      display: none;
+      cursor: pointer;
+      float: right;
+      border: none;
+      padding: .5em;
+      font-size: 1em;
+      color: transparent;
+      background-image: url(hamburger.svg);
+      background-size: 27px 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    main {
+      width: 90%;
+      max-width: 600px;
+      margin: 2em auto;
+    }
+
+    @media (max-width: 40em) {
+      nav {
+        flex-wrap: wrap;
+      }
+      button,
+      ul,
+      li,
+      li a {
+        display: block;
+      }
+      ul {
+        padding-top: 1em;
+        float: left;
+        background: #fff;
+        width: 100%;
+      }
+      .hide {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navigation">
+    <a href="#">
+      <img src="" alt="Logo">
+    </a>
+    <ul id="menu">
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="modal.html">Modal</a>
+      </li>
+      <li>
+        <a href="#">Item 2</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <p>Cupcake ipsum dolor sit amet. Tart cheesecake muffin sweet roll carrot cake candy canes soufflé jujubes marshmallow. Pie gummi bears carrot cake sweet roll chocolate bar dessert bonbon jelly beans. Candy carrot cake chocolate bar liquorice pudding. Macaroon dessert dragée dragée lemon drops gingerbread. Dessert cake sweet roll. Sweet roll sweet roll cotton candy. Gummi bears ice cream marshmallow jelly-o cheesecake chupa chups dragée bonbon. Sweet roll chupa chups cupcake soufflé.</p>
+    <p> Cake chocolate bar chocolate. Oat cake sesame snaps pudding pie. Jelly-o jelly-o marzipan bear claw lemon drops jelly-o. Bear claw ice cream chocolate bar caramels tootsie roll. Sesame snaps topping dessert chocolate cake cake apple pie candy tootsie roll marzipan. Pudding sugar plum tootsie roll. Cupcake icing croissant brownie macaroon candy oat cake ice cream. Tiramisu marshmallow marzipan. Chocolate candy canes apple pie.</p>
+    <p>Ice cream sweet roll cookie macaroon danish. Muffin soufflé biscuit oat cake tootsie roll. Wafer apple pie dragée sweet gingerbread cookie danish. Gummies pie powder jelly. Tiramisu sweet jelly bonbon cupcake jujubes marzipan. </p>
+    <p> Toffee sweet apple pie pastry candy cupcake macaroon candy canes. Cotton candy chocolate cake chupa chups soufflé lollipop pudding pie muffin. Ice cream gummi bears cotton candy candy fruitcake macaroon dessert. Apple pie liquorice soufflé jelly pudding lemon drops sweet roll ice cream.</p>
+    <p>Gummies chocolate bar cake. Cake marzipan cotton candy apple pie chocolate bar jujubes fruitcake jelly-o cheesecake. Danish jelly beans fruitcake cake gingerbread. Dessert cheesecake wafer oat cake macaroon candy canes bonbon. Brownie gummi bears chocolate croissant fruitcake croissant. Topping gummi bears liquorice marshmallow oat cake gummies. Wafer biscuit tart jujubes oat cake. Chocolate bar danish wafer ice cream brownie oat cake. Soufflé icing chocolate sweet carrot cake.</p>
+  </main>
+  <script>
+    var nav = document.getElementById('navigation')
+    if (nav && 'createElement' in document) {
+      var menu = document.getElementById('menu')
+      var hamburger = document.createElement('button')
+      var hamburgerText = document.createTextNode('Menu')
+      hamburger.appendChild(hamburgerText)
+      nav.insertBefore(hamburger, menu)
+      menu.classList.add('hide')
+
+      function toggleMenu() {
+        menu.classList.toggle('hide')
+      }
+      hamburger.addEventListener('click', toggleMenu)
+    }
+  </script>
+</body>
+
+</html>

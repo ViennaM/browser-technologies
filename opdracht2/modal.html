@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eee;
+      margin: 0;
+      font-family: sans-serif;
+      color: #777;
+      letter-spacing: .03em;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    main {
+      width: 90%;
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 2em;
+      background: #fff;
+    }
+
+    div {
+      color: #777;
+      background: #fff;
+      display: none;
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow: hidden;
+      position: fixed;
+      box-shadow: 0 0 999vw 999vh rgba(0, 0, 0, 0.4);
+      left: 50%;
+      transform: translatex(-50%);
+      padding: 2em;
+      top: 2em;
+    }
+
+    div h1 {
+      color: #222;
+    }
+
+    div:target {
+      display: block;
+    }
+
+    a {
+      padding: 1em 0;
+      color: #555;
+      display: block;
+    }
+
+    a:hover, a:focus {
+      font-weight: bold;
+    }
+
+    article {
+      overflow-y: scroll;
+      max-height: 80vh;
+      padding-bottom: 2em;
+    }
+
+    @media (max-width:500px) {
+      div {
+        top: 0;
+        max-height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <a href="hamburger.html">Hamburger</a>
+    <a href="#modal" id="button">Algemene voorwaarden</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quae! Sit maxime debitis itaque culpa porro distinctio
+      ea, hic soluta excepturi recusandae, quibusdam aliquam sunt ad eos repellat impedit quod, sapiente laboriosam qui.
+      Aspernatur fuga mollitia sequi excepturi voluptates harum.</p>
+    <p>Nulla blanditiis dolorum velit quod reiciendis cupiditate sapiente, accusamus ab aliquam molestiae maiores vel minus
+      beatae at dignissimos, asperiores facilis laborum numquam soluta delectus.</p>
+    <p>Ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, et corrupti maxime, suscipit cumque dolore officiis, provident
+      quos ipsa illum eaque qui error fuga quidem possimus neque earum alias! Delectus, excepturi explicabo id aut ut quasi
+      cum asperiores, dolor hic eius velit voluptas, vel incidunt laudantium voluptates nisi nulla numquam expedita dolorum
+      architecto eos accusamus maxime cumque? Asperiores quis, ex eius officia expedita, quasi quidem magnam, tempore rem
+      officiis perferendis.</p>
+    <p>Sit amet consectetur adipisicing elit. Laudantium delectus libero natus, ea error sapiente sit, doloribus, quas assumenda
+      ex iure non eveniet sunt vitae? Est aspernatur debitis veniam accusantium ipsa? Molestiae maiores perferendis magni
+      voluptate ea odio rerum, aliquid adipisci tempora quos voluptatem temporibus!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quae! Sit maxime debitis itaque culpa porro distinctio
+      ea, hic soluta excepturi recusandae, quibusdam aliquam sunt ad eos repellat impedit quod, sapiente laboriosam qui.
+      Aspernatur fuga mollitia sequi excepturi voluptates harum.</p>
+    <p>Nulla blanditiis dolorum velit quod reiciendis cupiditate sapiente, accusamus ab aliquam molestiae maiores vel minus
+      beatae at dignissimos, asperiores facilis laborum numquam soluta delectus.</p>
+    <p>Ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, et corrupti maxime, suscipit cumque dolore officiis, provident
+      quos ipsa illum eaque qui error fuga quidem possimus neque earum alias! Delectus, excepturi explicabo id aut ut quasi
+      cum asperiores, dolor hic eius velit voluptas, vel incidunt laudantium voluptates nisi nulla numquam expedita dolorum
+      architecto eos accusamus maxime cumque? Asperiores quis, ex eius officia expedita, quasi quidem magnam, tempore rem
+      officiis perferendis.</p>
+    <p>Sit amet consectetur adipisicing elit. Laudantium delectus libero natus, ea error sapiente sit, doloribus, quas assumenda
+      ex iure non eveniet sunt vitae? Est aspernatur debitis veniam accusantium ipsa? Molestiae maiores perferendis magni
+      voluptate ea odio rerum, aliquid adipisci tempora quos voluptatem temporibus!</p>
+  </main>
+
+  <div id="modal">
+    <a href="#" id="close">Sluiten</a>
+    <article>
+
+        <h1>Algemene voorwaarden</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+          incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+          ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit dolores
+          voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima, aliquam
+          doloremque iste?</p>
+        <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+          Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque voluptate
+          illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+          incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+          ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit dolores
+          voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima, aliquam
+          doloremque iste?</p>
+        <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+          Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque voluptate
+          illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+          incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+          ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit dolores
+          voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima, aliquam
+          doloremque iste?</p>
+        <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+          Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque voluptate
+          illum.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+          incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+          ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit dolores
+          voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima, aliquam
+          doloremque iste?</p>
+        <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+          Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque voluptate
+          illum.
+        </p>
+      </article>
+  </div>
+
+  <script>
+    var modal = document.getElementById('modal')
+    var button = document.getElementById('button')
+
+    if (modal && button) {
+      var close = document.getElementById('close')
+
+      modal.style.display = 'none'
+
+      button.addEventListener('click', function () {
+        if (modal.style.display === 'none') {
+          modal.style.display = 'block'
+          window.location.href.substr(0, window.location.href.indexOf('#'))
+        } else {
+          modal.style.display = 'none'
+        }
+      })
+
+      close.addEventListener('click', function () {
+        modal.style.display = 'none'
+      })
+    }
+    button.addEventListener("click", function (event) {
+      event.preventDefault()
+      history.pushState({}, "", button.href)
+      history.back()
+    })
+    close.addEventListener("click", function (event) {
+      event.preventDefault()
+      history.pushState({}, "", button.href)
+      history.back()
+    })
+  </script>
+
+</body>
+
+</html>
