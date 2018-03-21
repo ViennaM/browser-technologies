@@ -193,21 +193,19 @@
     var modal = document.getElementById('modal')
     var button = document.getElementById('button')
 
-    if (modal && button && 'classList' in document) {
+    if (modal && button && modal.classList) {
       var close = document.getElementById('close')
-
       modal.style.display = 'none'
 
       button.addEventListener('click', function () {
-        if (modal.style.display === 'none') {
-          modal.style.display = 'block'
-          window.location.href.substr(0, window.location.href.indexOf('#'))
-        } else {
-          modal.style.display = 'none'
+        modal.style.display = 'block'
+        if (document.getElementsByTagName('style').length === 1) {
+          document.body.style.overflowY = 'hidden'
         }
       })
       close.addEventListener('click', function () {
         modal.style.display = 'none'
+        document.body.style.overflowY = 'scroll'
       })
     }
   </script>

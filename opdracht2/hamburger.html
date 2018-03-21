@@ -142,7 +142,7 @@
   </main>
   <script>
     var nav = document.getElementById('navigation')
-    if (nav && nav.classList) {
+    if (nav && nav.classList && document.getElementsByTagName('style').length === 1) {
       var menu = document.getElementById('menu')
       var hamburger = document.createElement('button')
       var hamburgerText = document.createTextNode('Menu')
