@@ -198,19 +198,24 @@
 
   <script>
     var modal = document.getElementById('modal')
-    var button = document.getElementById('button')
+    var open = document.getElementById('button')
 
-    if (modal && button && modal.classList) {
+    if (modal && open && modal.classList) {
       var close = document.getElementById('close')
       modal.style.display = 'none'
-
-      button.addEventListener('click', function () {
+      open.addEventListener('click', function (event) {
+        if (event.preventDefault) {
+          event.preventDefault()
+        }
         modal.style.display = 'block'
         if (document.getElementsByTagName('style').length === 1) {
           document.body.style.overflowY = 'hidden'
         }
       })
-      close.addEventListener('click', function () {
+      close.addEventListener('click', function (event) {
+        if (event.preventDefault) {
+          event.preventDefault()
+        }
         modal.style.display = 'none'
         document.body.style.overflowY = 'scroll'
       })
