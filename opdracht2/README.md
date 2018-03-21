@@ -1,5 +1,8 @@
 # Browser Technologies
 //Robuuste, toegankelijke websites leren bouwen …
+[Hamburger](https://viennam.github.io/browser-technologies/opdracht2/hamburger.html)
+[Modal](https://viennam.github.io/browser-technologies/opdracht2/modal.html)
+
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
 //Wat laat je zien als een browser of gebruiker 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt?
