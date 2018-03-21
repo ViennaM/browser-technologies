@@ -10,9 +10,11 @@
     * {
       box-sizing: border-box;
     }
-
+    html {
+      background: #fff;
+    }
     body {
-      background: #eee;
+      background: #eef1f3;
       margin: 0;
       font-family: sans-serif;
       color: #777;
@@ -87,7 +89,8 @@
     main {
       width: 90%;
       max-width: 600px;
-      margin: 2em auto;
+      margin: 0 auto;
+      padding: 2em 0;
     }
 
     @media (max-width: 40em) {
@@ -139,7 +142,7 @@
   </main>
   <script>
     var nav = document.getElementById('navigation')
-    if (nav && 'createElement' in document) {
+    if (nav && nav.classList) {
       var menu = document.getElementById('menu')
       var hamburger = document.createElement('button')
       var hamburgerText = document.createTextNode('Menu')
