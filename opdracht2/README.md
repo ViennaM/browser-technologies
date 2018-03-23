@@ -20,6 +20,16 @@ Het icoon wordt dus met javascript ingeladen en de navigatie is altijd beschikba
 Javascript wordt alleen uitgevoerd, wanneer de functie `classList` beschikbaar is op de desbetreffende browser en wanneer er css beschikbaar is:
 `if (nav && nav.classList && document.getElementsByTagName('style').length === 1)`
 
+## Modal
+De modal is in dit geval een pop-up, die getriggerd wordt door op een link te klikken. 
+
+### Werking
+- De modal wordt zonder css en js weergegeven onder de tekst. Door middel van een anchor link scroll je naar de tekst bij het klikken op de link.
+- Zonder css is de modal niet zichtbaar, totdat je op de link klikt. Hierbij is de tekst ook te verbergen.
+- Zonder js wordt de modal getriggerd met de css `:target` selector.
+
+### Feature detection
+Net zoals bij de hamburger feature, wordt er gecheckt of de `classList` functie beschikbaar is: `if (modal && open && modal.classList)`
 
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
