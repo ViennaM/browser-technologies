@@ -5,6 +5,22 @@
 
 [Modal](https://viennam.github.io/browser-technologies/opdracht2/modal.html)
 
+## Hamburger
+De eerste feature is een navigatie die verandert naar een hamburger icoon, zodra het scherm in de breedte kleiner wordt. Als je op de hamburger drukt, verschijnt het menu.
+
+### Werking
+Het hamburger menu is opgebouwd uit drie lagen: html, css, js.
+- De navigatie zonder css en js wordt in html weergegeven als lijst.
+- Zonder js, wordt het hamburger icoon niet weergegeven, maar is de navigatie wel responsive.
+- Zonder css, wordt de button niet in de html geladen door javascript.
+
+Het icoon wordt dus met javascript ingeladen en de navigatie is altijd beschikbaar in html.
+
+#### Feature detection
+Javascript wordt alleen uitgevoerd, wanneer de functie `classList` beschikbaar is op de desbetreffende browser en wanneer er css beschikbaar is:
+`if (nav && nav.classList && document.getElementsByTagName('style').length === 1)`
+
+
 
 ## Opdracht 2 - 1, 2, 3 Feature Detectie
 //Wat laat je zien als een browser of gebruiker 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt?
