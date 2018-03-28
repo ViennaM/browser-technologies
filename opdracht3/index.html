@@ -29,6 +29,7 @@
       line-height: 2.5vh;
       right: 0;
     }
+
     header h1 {
       height: 1px;
       width: 1px;
@@ -41,7 +42,8 @@
       text-decoration: none;
     }
 
-    header nav a:focus, header nav a:hover {
+    header nav a:focus,
+    header nav a:hover {
       transform: scale(1.6);
       outline: none;
       background: #fff;
@@ -106,9 +108,9 @@
     }
 
     summary {
-      border: 1px solid transparent;  
+      border: 1px solid transparent;
     }
-    
+
     summary:focus {
       outline: none;
       border: 1px solid #222;
@@ -181,7 +183,7 @@
       font-weight: 500;
     }
 
-    input[type="search"] {
+    input {
       -webkit-appearance: none;
       color: #545871;
       width: 100%;
@@ -193,7 +195,7 @@
       border-radius: 10px;
     }
 
-    input[type="search"]:focus {
+    input:focus {
       outline: none;
       border: 1px solid #222;
     }
@@ -259,6 +261,7 @@
         line-height: 2vh;
       }
     }
+
     header div a {
       position: absolute;
       height: 1px;
@@ -271,7 +274,7 @@
       height: auto;
       width: auto;
       margin: auto;
-      overflow:auto;
+      overflow: auto;
       top: 10px;
       right: 45px;
     }
@@ -281,7 +284,9 @@
 <body>
   <header>
     <h1>Navigatie</h1>
-    <div><a href="#main">Navigatie overslaan</a></div>
+    <div>
+      <a href="#main">Navigatie overslaan</a>
+    </div>
     <nav>
       <ol>
         <li>
@@ -2293,49 +2298,53 @@
   </main>
 
   <script>
-    var list = document.querySelectorAll('div h2')
-    var contacts = document.querySelectorAll('ol>li>ol>li')
-    var contactList = document.querySelector('main ol')
-    var names = []
-    var searchEl =
-      '<form><label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search"></form>'
+    var element = document.createElement('_')
+    var string = ''
+    var arr = []
+    if ('querySelectorAll' in document && 'classList' in element && typeof string.replace === 'function' && typeof arr.includes === 'function') {
+      var list = document.querySelectorAll('div h2')
+      var contacts = document.querySelectorAll('ol>li>ol>li')
+      var contactList = document.querySelector('main ol')
+      var names = []
+      var searchEl =
+        '<form><label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search"></form>'
 
-    for (var i = 0; i < list.length; i++) {
-      names.push(list[i].textContent)
-    }
-  console.log(contactList)
-    contactList.insertAdjacentHTML('beforebegin', searchEl)
-    alphabet()
-
-    var searchInput = document.getElementById('search')
-    searchInput.addEventListener('input', function () {
-      contacts.forEach((contact) => {
-        var name = contact.querySelector('h2').innerHTML.toLowerCase()
-        var phone = contact.querySelector('h3').innerHTML.toLowerCase()
-        if (!name.includes(searchInput.value.toLowerCase()) && !phone.includes(searchInput.value.toLowerCase())) {
-          contact.classList.add('hidden')
-          contact.style.display = 'none'
-        } else {
-          contact.classList.remove('hidden')
-          contact.style.display = 'block'
-        }
-      })
+      for (var i = 0; i < list.length; i++) {
+        names.push(list[i].textContent)
+      }
+      contactList.insertAdjacentHTML('beforebegin', searchEl)
       alphabet()
-    })
 
-    function alphabet() {
-      var alphabet = document.querySelectorAll('main>ol>li')
-      alphabet.forEach((letter) => {
-        var count = letter.querySelectorAll('ol>li:not(.hidden)')
-        console.log(letter, count.length)
-        if (!count.length) {
-          letter.classList.add('hidden')
-          letter.style.display = 'none'
-        } else {
-          letter.classList.remove('hidden')
-          letter.style.display = 'block'
+      var searchInput = document.getElementById('search')
+      searchInput.addEventListener('input', function () {
+        for (var i = 0; i < contacts.length; i++) {
+          var name = contacts[i].querySelector('h2').innerHTML.toLowerCase().replace(/\s/g, '')
+          var phone = contacts[i].querySelector('h3').innerHTML.replace(/\s/g, '').replace(/[()]/g, '')
+          console.log(phone)
+          if (!name.includes(searchInput.value.toLowerCase().replace(/\s/g, '')) && !phone.includes(searchInput.value.toLowerCase().replace(/\s/g, ''))) {
+            contacts[i].classList.add('hidden')
+            contacts[i].style.display = 'none'
+          } else {
+            contacts[i].classList.remove('hidden')
+            contacts[i].style.display = 'block'
+          }
         }
+        alphabet()
       })
+
+      function alphabet() {
+        var alphabet = document.querySelectorAll('main>ol>li')
+        alphabet.forEach((letter) => {
+          var count = letter.querySelectorAll('ol>li:not(.hidden)')
+          if (!count.length) {
+            letter.classList.add('hidden')
+            letter.style.display = 'none'
+          } else {
+            letter.classList.remove('hidden')
+            letter.style.display = 'block'
+          }
+        })
+      }
     }
   </script>
 </body>
