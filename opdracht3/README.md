@@ -68,7 +68,6 @@ Met behulp van [BrowserStack](https://www.browserstack.com/) heb ik op een aanta
 - [ ] Contacten kunnen toevoegen / wijzigen / verwijderen
 - [ ] Feedback wanneer er geen contacten zijn gevonden
 
-Maak een demo op basis van een use case. Zorg dat alle gebruikers, met alle browsers, in iedere context minimaal de core functionaliteit te zien/horen/voelen krijgen. Bouw je demo in 3 lagen, volgens het principe van Progressive Enhancement. Gebruik als enhanced feature een (hippe, innovatieve, vooruitstrevende) Browser Technologie die je gaat onderzoeken op functionaliteit, toegankelijkheid en (browser) ondersteuning.
 
 ## Bronnen
 
