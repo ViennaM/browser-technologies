@@ -7,9 +7,10 @@
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
   <title>Contacts</title>
   <style>
-    .hidden {
-      display: none;
+    * {
+      box-sizing: border-box;
     }
+
     body {
       background: #F5F6FA;
       margin: 0;
@@ -21,25 +22,34 @@
 
     header {
       position: fixed;
-      margin: 10px;
       text-align: center;
       height: 100%;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 1.9vh;
+      font-size: 1.9vh;
+      line-height: 2.5vh;
+      right: 0;
     }
 
     header a {
       text-decoration: none;
     }
 
-    header nav {
-      padding: 10px;
-      background: #fff;
-    }
-
     header nav,
     header nav ol {
       height: 100%;
+    }
+
+    nav ol {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header nav {
+      margin: 10px;
+      height: calc(100% - 20px);
+      background: #fff;
     }
 
     a {
@@ -52,7 +62,7 @@
     }
 
     nav li a {
-      padding: 5px;
+      padding: 5px 10px;
       display: block;
     }
 
@@ -66,7 +76,8 @@
     main {
       width: 90%;
       max-width: 500px;
-      margin: 10px auto;
+      margin: 0 auto;
+      padding: 10px 0;
     }
 
     ol>li>ol>li {
@@ -86,11 +97,9 @@
     }
 
     summary:after {
-      border-radius: 5px;
       content: "+";
       color: #9597A6;
       float: right;
-      top: 30px;
       font-size: 1.5em;
       margin: 18px 10px 0 0;
       padding: 0;
@@ -147,12 +156,78 @@
     }
 
     input[type="search"] {
+      -webkit-appearance: none;
+      color: #545871;
       width: 100%;
       padding: 10px;
       font-size: 16px;
       margin: 10px 0;
-      height: 40px;
+      box-shadow: none;
+      border: 1px solid #dadbe7;
+      border-radius: 10px;
+    }
+
+    label {
+      display: none;
+    }
+
+    .hidden {
+      visibility: hidden;
+      height: 1px;
       display: block;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    @media screen and (max-height: 812px) and (max-width: 400px) {
+      main {
+        width: 80%;
+        max-width: 500px;
+        margin: 0 25px 0 15px;
+        padding: 10px 0;
+      }
+      summary:after {
+        margin: 11px 5px 0 0;
+        width: 5px;
+        font-size: 20px;
+      }
+      li details summary {
+        padding: 10px;
+      }
+      li details summary img {
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+      }
+      div h1 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      div h2 {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-height: 750px) {
+      header {
+        font-size: 1.6vh;
+        line-height: 2.3vh;
+      }
+      header nav {
+        margin: 0;
+        height: 100%;
+      }
+      main {
+        width: 85%;
+      }
+    }
+
+
+    @media screen and (max-height: 600px) {
+      header {
+        font-size: 2vh;
+        line-height: 2.1vh;
+      }
     }
   </style>
 </head>
@@ -168,13 +243,25 @@
           <a href="#B">B</a>
         </li>
         <li>
+          <a href="#C">C</a>
+        </li>
+        <li>
           <a href="#D">D</a>
+        </li>
+        <li>
+          <a href="#E">E</a>
+        </li>
+        <li>
+          <a href="#F">F</a>
         </li>
         <li>
           <a href="#G">G</a>
         </li>
         <li>
           <a href="#H">H</a>
+        </li>
+        <li>
+          <a href="#I">I</a>
         </li>
         <li>
           <a href="#J">J</a>
@@ -189,7 +276,16 @@
           <a href="#M">M</a>
         </li>
         <li>
+          <a href="#N">N</a>
+        </li>
+        <li>
+          <a href="#O">O</a>
+        </li>
+        <li>
           <a href="#P">P</a>
+        </li>
+        <li>
+          <a href="#Q">Q</a>
         </li>
         <li>
           <a href="#R">R</a>
@@ -198,10 +294,25 @@
           <a href="#S">S</a>
         </li>
         <li>
+          <a href="#T">T</a>
+        </li>
+        <li>
+          <a href="#U">U</a>
+        </li>
+        <li>
           <a href="#V">V</a>
         </li>
         <li>
           <a href="#W">W</a>
+        </li>
+        <li>
+          <a href="#X">X</a>
+        </li>
+        <li>
+          <a href="#Y">Y</a>
+        </li>
+        <li>
+          <a href="#Z">Z</a>
         </li>
       </ol>
     </nav>
@@ -528,6 +639,9 @@
           </li>
         </ol>
       </li>
+      <li id="C">
+        <a href="#C">C</a>
+      </li>
       <li id="D">
         <a href="#D">D</a>
         <ol>
@@ -687,6 +801,12 @@
             </details>
           </li>
         </ol>
+      </li>
+      <li id="E">
+        <a href="#E">E</a>
+      </li>
+      <li id="F">
+        <a href="#F">F</a>
       </li>
       <li id="G">
         <a href="#G">G</a>
@@ -906,6 +1026,9 @@
 
         </ol>
       </li>
+      <li id="I">
+        <a href="#I">I</a>
+      </li>
       <li id="J">
         <a href="#J">J</a>
         <ol>
@@ -990,9 +1113,9 @@
           <li>
             <details>
               <summary>
-                <img src="https://uinames.com/api/photos/female/9.jpg" alt="foto Johanneke Jonker">
+                <img src="https://uinames.com/api/photos/female/9.jpg" alt="foto Ineke Jonker">
                 <div>
-                  <h1>Johanneke Jonker</h1>
+                  <h1>Ineke Jonker</h1>
                   <h2>(595) 471 4176</h2>
                 </div>
               </summary>
@@ -1006,7 +1129,7 @@
                 <li>
                   <h3>E-mailadres:</h3>
                   <p>
-                    <a href="mailto:johanneke_88@gmail.com">johanneke_88@gmail.com</a>
+                    <a href="mailto:johanneke_88@gmail.com">Ineke_88@gmail.com</a>
                   </p>
                 </li>
               </ul>
@@ -1343,9 +1466,9 @@
           <li>
             <details>
               <summary>
-                <img src="https://uinames.com/api/photos/female/23.jpg" alt="foto Johanneke van der Meulen">
+                <img src="https://uinames.com/api/photos/female/23.jpg" alt="foto Ineke van der Meulen">
                 <div>
-                  <h1>Johanneke van der Meulen</h1>
+                  <h1>Ineke van der Meulen</h1>
                   <h2>(983) 215 1316</h2>
                 </div>
               </summary>
@@ -1359,7 +1482,7 @@
                 <li>
                   <h3>E-mailadres:</h3>
                   <p>
-                    <a href="mailto:johanneke van der-92@gmail.com">johanneke van der-92@gmail.com</a>
+                    <a href="mailto:ineke van der-92@gmail.com">ineke van der-92@gmail.com</a>
                   </p>
                 </li>
               </ul>
@@ -1393,6 +1516,12 @@
           </li>
 
         </ol>
+      </li>
+      <li id="N">
+        <a href="#N">N</a>
+      </li>
+      <li id="O">
+        <a href="#O">O</a>
       </li>
       <li id="P">
         <a href="#P">P</a>
@@ -1450,6 +1579,9 @@
           </li>
 
         </ol>
+      </li>
+      <li id="Q">
+        <a href="#Q">Q</a>
       </li>
       <li id="R">
         <a href="#R">R</a>
@@ -1667,6 +1799,12 @@
           </li>
 
         </ol>
+      </li>
+      <li id="T">
+        <a href="#T">T</a>
+      </li>
+      <li id="U">
+        <a href="#U">U</a>
       </li>
       <li id="V">
         <a href="#V">V</a>
@@ -2093,6 +2231,15 @@
           </li>
         </ol>
       </li>
+      <li id="X">
+        <a href="#X">X</a>
+      </li>
+      <li id="Y">
+        <a href="#Y">Y</a>
+      </li>
+      <li id="Z">
+        <a href="#Z">Z</a>
+      </li>
     </ol>
   </main>
 
@@ -2101,36 +2248,42 @@
     var contacts = document.querySelectorAll('ol>li>ol>li')
     var main = document.getElementById('main')
     var names = []
-    var searchEl = '<input type="search" name="" id="search">'
+    var searchEl =
+      '<form><label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search"></form>'
 
     for (var i = 0; i < list.length; i++) {
       names.push(list[i].textContent)
     }
 
     main.insertAdjacentHTML('afterbegin', searchEl)
+    alphabet()
+
     var searchInput = document.getElementById('search')
     searchInput.addEventListener('input', function () {
       contacts.forEach((contact) => {
         var name = contact.querySelector('h1').innerHTML.toLowerCase()
         var phone = contact.querySelector('h2').innerHTML.toLowerCase()
-        if(!name.includes(searchInput.value.toLowerCase()) && !phone.includes(searchInput.value.toLowerCase())) {
+        if (!name.includes(searchInput.value.toLowerCase()) && !phone.includes(searchInput.value.toLowerCase())) {
           contact.classList.add('hidden')
         } else {
           contact.classList.remove('hidden')
         }
       })
+      alphabet()
+    })
+
+    function alphabet() {
       var alphabet = document.querySelectorAll('main>ol>li')
       alphabet.forEach((letter) => {
         var count = letter.querySelectorAll('ol>li:not(.hidden)')
         console.log(letter, count.length)
-        if(!count.length) {
+        if (!count.length) {
           letter.classList.add('hidden')
         } else {
           letter.classList.remove('hidden')
         }
       })
-    })
-
+    }
   </script>
 </body>
 
