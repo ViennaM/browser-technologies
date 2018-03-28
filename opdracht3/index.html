@@ -41,6 +41,13 @@
       text-decoration: none;
     }
 
+    header nav a:focus, header nav a:hover {
+      transform: scale(1.6);
+      outline: none;
+      background: #fff;
+      border-radius: 5px;
+    }
+
     header nav,
     header nav ol {
       height: 100%;
@@ -96,6 +103,16 @@
 
     li details {
       padding: 0;
+    }
+
+    summary {
+      border: 1px solid transparent;  
+    }
+    
+    summary:focus {
+      outline: none;
+      border: 1px solid #222;
+      border-radius: 10px;
     }
 
     details summary::-webkit-details-marker {
@@ -155,6 +172,10 @@
       padding: 20px;
     }
 
+    h4 {
+      color: #545871;
+    }
+
     main li>a {
       text-decoration: none;
       font-weight: 500;
@@ -170,6 +191,11 @@
       box-shadow: none;
       border: 1px solid #dadbe7;
       border-radius: 10px;
+    }
+
+    input[type="search"]:focus {
+      outline: none;
+      border: 1px solid #222;
     }
 
     label {
