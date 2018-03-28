@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+  <script type="text/javascript" src="details-shim.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="details-shim.min.css">
   <title>Contacts</title>
   <style>
     * {
@@ -2301,7 +2303,8 @@
     var element = document.createElement('_')
     var string = ''
     var arr = []
-    if ('querySelectorAll' in document && 'classList' in element && typeof string.replace === 'function' && typeof arr.includes === 'function') {
+    if ('querySelectorAll' in document && 'classList' in element && typeof string.replace === 'function' && typeof arr.includes ===
+      'function') {
       var list = document.querySelectorAll('div h2')
       var contacts = document.querySelectorAll('ol>li>ol>li')
       var contactList = document.querySelector('main ol')
@@ -2316,12 +2319,17 @@
       alphabet()
 
       var searchInput = document.getElementById('search')
+      var form = document.querySelector('form')
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+      })
+
       searchInput.addEventListener('input', function () {
         for (var i = 0; i < contacts.length; i++) {
           var name = contacts[i].querySelector('h2').innerHTML.toLowerCase().replace(/\s/g, '')
           var phone = contacts[i].querySelector('h3').innerHTML.replace(/\s/g, '').replace(/[()]/g, '')
-          console.log(phone)
-          if (!name.includes(searchInput.value.toLowerCase().replace(/\s/g, '')) && !phone.includes(searchInput.value.toLowerCase().replace(/\s/g, ''))) {
+          if (!name.includes(searchInput.value.toLowerCase().replace(/\s/g, '')) && !phone.includes(searchInput.value
+              .toLowerCase().replace(/\s/g, ''))) {
             contacts[i].classList.add('hidden')
             contacts[i].style.display = 'none'
           } else {
