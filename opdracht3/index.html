@@ -164,7 +164,7 @@
       -webkit-appearance: none;
       color: #545871;
       width: 100%;
-      padding: 10px;
+      padding: 20px;
       font-size: 16px;
       margin: 10px 0;
       box-shadow: none;
@@ -230,8 +230,24 @@
     @media screen and (max-height: 600px) {
       header {
         font-size: 2vh;
-        line-height: 2.1vh;
+        line-height: 2vh;
       }
+    }
+    header div a {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    header div a:focus {
+      height: auto;
+      width: auto;
+      margin: auto;
+      overflow:auto;
+      top: 10px;
+      right: 45px;
     }
   </style>
 </head>
@@ -239,6 +255,7 @@
 <body>
   <header>
     <h1>Navigatie</h1>
+    <div><a href="#main">Navigatie overslaan</a></div>
     <nav>
       <ol>
         <li>
