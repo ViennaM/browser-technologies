@@ -60,6 +60,9 @@ if ('querySelectorAll' in document
 Aangezien Internet Explorer de HTML tags details en summary nog niet ondersteunt, heb ik getest of de [fallback](https://github.com/tyleruebele/details-shim) wel werkt. Blijkbaar werkt het vanaf IE9. Navigeren op alfabet is nog wel mogelijk.
 
 **Mobiele devices**
+![Devicelab](images/devicelab.png)
+Op Kindle is navigeren moeilijk. Blijkbaar werkt `position: fixed;` niet op de alfabet navigatie, waardoor deze wegvalt wanneer je scrolt. Op Nexus werken de functies goed. Het enige wat nog niet overal goed gaat is dat het alfabet niet in het scherm past.
+
 ![Mobiele devices](images/mobiel.png)
 Met behulp van [BrowserStack](https://www.browserstack.com/) heb ik op een aantal mobiele devices getest. Opvallend is dat op de meeste devices JavaScript in de browser wordt ondersteund. Op bijvoorbeeld Nokia Lumia 930 is de details / summary fallback toegepast, ook al wordt de zoekfunctie niet ondersteund.
 
@@ -67,6 +70,7 @@ Met behulp van [BrowserStack](https://www.browserstack.com/) heb ik op een aanta
 - [ ] Contactenlijst server side serveren
 - [ ] Contacten kunnen toevoegen / wijzigen / verwijderen
 - [ ] Feedback wanneer er geen contacten zijn gevonden
+- [ ] Alfabet navigatie overal passend maken
 
 
 ## Bronnen
