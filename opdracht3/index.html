@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
-  <script type="text/javascript" src="details-shim.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="details-shim.min.css">
   <title>Contacts</title>
   <style>
     * {
@@ -187,6 +185,19 @@
     main li>a {
       text-decoration: none;
       font-weight: 500;
+      background: #f5f6fa;
+      padding: 10px 0;
+      margin: 0;
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+
+    @supports(position:sticky) {
+      main li>a {
+      position: sticky;
+      top: -1px;
+      }
     }
 
     input {
@@ -2346,7 +2357,7 @@
 
       function alphabet() {
         var alphabet = document.querySelectorAll('main>ol>li')
-        alphabet.forEach((letter) => {
+        alphabet.forEach(function (letter) {
           var count = letter.querySelectorAll('ol>li:not(.hidden)')
           if (!count.length) {
             letter.classList.add('hidden')
