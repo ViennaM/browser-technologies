@@ -1,22 +1,65 @@
-# Browser Technologies
-//Robuuste, toegankelijke websites leren bouwen …
+# Opdracht 1.1
 
-## Opdracht 1 - Progressive Enhancement
-//Het web is voor iedereen. Leren over Progressive enhancement
+## Breedband
 
-### Opdracht 1.1 - Breek het Web
-Het Web laten 'breken' door features van het platform bewust uit te zetten. Images, custom fonts, JavaScript, kleur, breedband internet, etc. Allemaal met als doel je te laten beseffen hoeveel je nog niet weet van het Web, erachter komen dat je misschien aannames hebt die niet kloppen, en om je je in te laten leven in de eindgebruiker.
+### Wat is breedband?
+Een snelle verbinding is niet altijd vanzelfsprekend. Je hebt namelijk meestal geen snelle verbinding. Dit kan problemen opleveren voor de user experience. Je moet er dus rekening mee houden tijdens development. In dit onderzoek beschrijf ik de problemen die het zou kunnen opleveren, wat wij als developers eraan zouden kunnen doen en hoe je kunt testen of je er goed genoeg rekening mee hebt gehouden.
 
-Onderzoek minimaal twee features. Dat betekent uitvogelen wat het voor impact heeft op de sites die je kent en normaal gebruikt. Kies sites in je directe omgeving: van je werkgever, lokale vereniging, de cafetaria om de hoek, en/of eerdere projecten die je zelf gedaan hebt.
+**Problemen**
 
-Kies 2 features van de 8
-- Zoek uit welke problemen ze kunnen veroorzaken (verzamel cijfers, meningen, ervaringen)
-- Zoek uit hoe je dit kunt testen (hoe kun je een feature ‘uitzetten’)
-- Vind een aantal sites waar dit ook problemen oplevert (uit je directe omgeving)
-- Beschrijf hoe je dit kan fiksen
-- Maak hierover een presentatie en neem die woensdag mee, dan gaan we de resultaten bespreken
-Lezen: [Everyone has JavaScript, right?](https://kryogenix.org/code/browser/everyonehasjs.html) en [I Turned Off JavaScript and it was Glorious](https://www.wired.com/2015/11/i-turned-off-javascript-for-a-whole-week-and-it-was-glorious/)
+Eventuele problemen van websites geoptimaliseerd voor breedband:
+- Wifi in openbare ruimtes (hotels)
+- 3G verbinding
+- Datalimiet
 
+**Oplossingen**
+
+Voorbeelden van oplossingen voor bovenstaande problemen:
+- Geef jezelf een richtlijn (performance budget)
+- Compress afbeeldingen
+- Voeg critical CSS toe
+
+**Testen**
+- Network throttling in DevTools
+- Performance test via tools
+	- [http://www.webpagetest.org/](http://www.webpagetest.org/)
+	- [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
+
+#### Bronnen
+
+[http://www.webpagetest.org/](http://www.webpagetest.org/)
+
+[https://developers.google.com/speed/pagespeed/insights](https://developers.google.com/speed/pagespeed/insights/)
+
+[https://en.wikipedia.org/wiki/Bandwidth_throttling](https://en.wikipedia.org/wiki/Bandwidth_throttling)
+
+[https://timkadlec.com/2013/01/setting-a-performance-budget/](https://timkadlec.com/2013/01/setting-a-performance-budget/)
+
+
+## Trackpad
+
+Ook je muis of trackpad heeft invloed op de user experience. Websites horen bruikbaar te zijn zonder muis of trackpad, omdat niet iedereen die wil gebruiken. Soms is het zelfs sneller om een website te gebruiken zonder.
+
+### Problemen
+
+Eventuele problemen van muis of trackpad:
+- Motorische beperkingen
+- Lege batterijen 
+- Smart tv besturing
+
+### Oplossingen
+
+Voorbeelden van oplossingen:
+- Focus states (CSS)
+- Semantische HTML
+- Accesskeys
+- Eventueel ARIA labels
+
+#### Bronnen
+
+[https://www.w3schools.com/tags/att_global_accesskey.asp](https://www.w3schools.com/tags/att_global_accesskey.asp)
+
+[https://www.washington.edu/accessibility/checklist/focus/](https://www.washington.edu/accessibility/checklist/focus/)
 
 ### Opdracht 1.2 - Fork je OBA
 Hoe zit het eigenlijk met Progressive Enhancement van je OBA opdracht? Waarschijnlijk kan daar wel het één en ander aan verbeterd worden, dat ding is immers in een week in elkaar gehackt!
