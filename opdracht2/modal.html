@@ -168,9 +168,10 @@
       var newTag = document.createElement('div');
       newTag.innerHTML = content;
       newTag.className = 'dialog';
+      newTag.id = 'dialog';
       parent.replaceChild(newTag, dialog);
 
-      dialog = document.getElementsByClassName('dialog');
+      dialog = document.getElementById('dialog');
       dialog.style.display = 'none';
 
       for (var i = 0; i < buttons.length; i++) {
