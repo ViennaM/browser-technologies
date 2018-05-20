@@ -61,33 +61,16 @@ Voorbeelden van oplossingen:
 
 [https://www.washington.edu/accessibility/checklist/focus/](https://www.washington.edu/accessibility/checklist/focus/)
 
-### Opdracht 1.2 - Fork je OBA
-Hoe zit het eigenlijk met Progressive Enhancement van je OBA opdracht? Waarschijnlijk kan daar wel het één en ander aan verbeterd worden, dat ding is immers in een week in elkaar gehackt!
-
-Voor deze opdracht ga je toepassen wat je van opdracht 1.1 hebt geleerd.
-- Pas Progressive enhancement toe op je OBA Web App.
-- Check je OBA Web App op de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk.
-- Test  je OBA Web App in het device lab.
-- Laat je OBA Web App voorlezen door een screenreader.
-- Gebruik onderstaande artikelen om je code te optimaliseren.
-[The accessibility mindset](https://24ways.org/2015/the-accessibility-mindset/) en [Accessibility Originates With UX: A BBC iPlayer Case Study](https://www.smashingmagazine.com/2015/02/bbc-iplayer-accessibility-case-study/)
-
-Beoordelingscriteria
-- Zet je code op Github
-- Schrijf een Readme met:
-  - een beschrijving van de problemen die je hebt gevonden
-  - beschrijf hoe je de problemen hebt opgelost
-  - of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben
-
 # Opdracht 1.2
 Voor deze opdracht check ik mijn OBA Web App op de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk. Vervolgens test ik de app in het device lab en laat ik het voorlezen door een screenreader. 
 
 ## 8 Features
 
 ### 1. Afbeeldingen
+![Afbeeldingen](images/afbeeldingen.png)
 
 **Problemen**
-- De hele app is gebaseerd op afbeeldingen, wanneer afbeeldingen geblokkeerd worden is de app onbruikbaar.
+- De hele app is gebaseerd op afbeeldingen, wanneer afbeeldingen geblokkeerd worden is de app niet meer relevant.
 - Svg afbeeldingen worden niet in elke browser ondersteund.
 
 **Oplossingen**
@@ -103,6 +86,8 @@ Voor deze opdracht check ik mijn OBA Web App op de 8 features uit opdracht 1.1 e
 - Wanneer het font niet wordt geladen, wordt het standaard font `sans-serif`.
 
 ### 3. JavaScript
+![Javascript](images/javascript.gif)
+
 
 **Problemen**
 - De hele app is gebaseerd op client-side JavaScript. Dit zorgt ervoor dat de app onbruikbaar is zonder JavaScript. Op de header en navigatie na wordt er niks geladen.
@@ -111,6 +96,7 @@ Voor deze opdracht check ik mijn OBA Web App op de 8 features uit opdracht 1.1 e
 - Met het vak Performance Matters heb ik de app omgezet naar een server-side app. Hierdoor blijft de app bruikbaar, ook zonder JavaScript.
 
 ### 4. Kleur
+![Contrast](images/contrast.gif)
 
 **Problemen**
 - Op het middelste niveau van comformiteit scoort het contrast voldoende, op het hoogste niveau niet.
@@ -120,6 +106,7 @@ Voor deze opdracht check ik mijn OBA Web App op de 8 features uit opdracht 1.1 e
 
 
 ### 5. Breedband
+![Breedband](images/breedband.gif)
 
 **Problemen**
 - Bij een langzame verbinding werkt de app matig, wel zie je een loader. De belangrijkste content moet worden opgehaald via een API, waardoor de app onbruikbaar is als dit nog niet is gebeurd.
@@ -139,6 +126,7 @@ N.v.t. (cookies worden niet gebruikt).
 - Een mogelijke oplossing hiervoor is om altijd dezelfde posters te laden en een ververs functie toe te voegen.
 
 ### 8. Muis / Trackpad
+![Tab](images/tab.gif)
 **Problemen**
 - De focus wordt volledig overgeslagen op de posters.
 - Er zijn geen duidelijke focus states.
