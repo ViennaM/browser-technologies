@@ -1,4 +1,201 @@
 <!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Trebuchet MS, sans-serif;
+    }
+
+    a {
+      color: dodgerblue;
+    }
+
+    a:hover {
+      color: grey;
+    }
+
+    dialog {
+      position: fixed;
+      top: 50%;
+      transform: translatey(-50%);
+      width: 80%;
+      height: 80%;
+      box-shadow: 0 0 0 999vw rgba(0, 0, 0, 0.3);
+      overflow: scroll;
+    }
+
+    .dialog {
+      width: 80%;
+      height: 80%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      border: 1px solid black;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      box-shadow: 0 0 0 999vw rgba(0, 0, 0, 0.3);
+      z-index: 9;
+      background: white;
+      padding: 30px;
+      overflow: scroll;
+    }
+
+    .dialog.notransform {
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    @media (max-width: 450px) {
+      dialog,
+      .dialog {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Modal</h1>
+  </header>
+  <main>
+    <a href="algemene-voorwaarden.html" class="modalbutton">Algemene voorwaarden</a>
+  </main>
+
+  <dialog>
+    <a href="#main" class="modalbutton">Sluiten</a>
+    <article>
+      <h1>Algemene voorwaarden</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+        incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+        ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit
+        dolores voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima,
+        aliquam doloremque iste?</p>
+      <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+        Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque
+        voluptate illum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+        incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+        ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit
+        dolores voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima,
+        aliquam doloremque iste?</p>
+      <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+        Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque
+        voluptate illum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+        incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+        ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit
+        dolores voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima,
+        aliquam doloremque iste?</p>
+      <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+        Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque
+        voluptate illum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam totam amet at veritatis natus consequuntur dolores ipsam
+        incidunt numquam velit, neque maiores dolorum, unde assumenda. Optio obcaecati voluptatum, quod rem!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ad. Unde, et natus quisquam consequuntur laudantium
+        ut soluta optio a adipisci nesciunt veritatis eos rerum accusamus? Delectus, ipsum, sapiente minima sint impedit
+        dolores voluptate dolorem natus harum quaerat maxime perferendis id reiciendis libero quidem ullam cumque. Minima,
+        aliquam doloremque iste?</p>
+      <p>Dolor sit amet, consectetur adipisicing elit. Eius nemo accusamus blanditiis officia dolorem facere consectetur quo.
+        Dolorem magnam repellat maiores quidem, odio. Laborum ipsam harum magnam minima fugit fuga obcaecati porro atque
+        voluptate illum.
+      </p>
+    </article>
+  </dialog>
+
+
+  <script>
+    var buttons = document.getElementsByClassName('modalbutton');
+    var dialog = document.getElementsByTagName('dialog');
+    // check if css transform is available (https://stackoverflow.com/a/12625986/6445473)
+    var transformCheck = function () {
+      var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' ');
+      var div = document.createElement('div');
+      for (var i = 0; i < prefixes.length; i++) {
+        if (div && div.style[prefixes[i]] !== undefined) {
+          return prefixes[i];
+        }
+      }
+      return false;
+    }
+
+
+    for (var i = 0; i < buttons.length; i++) {
+      if (typeof document.addEventListener === 'function') { // check if addEventListener is available
+        buttons[i].addEventListener('click', function (event) {
+          if (event.preventDefault) { // check if preventDefault is available
+            event.preventDefault();
+          }
+        })
+      }
+    }
+
+    // check if dialog is available
+    if ("open" in document.createElement('dialog')) {
+      document.createElement('dialog');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          if (dialog[0].open === true) {
+            dialog[0].open = false;
+          } else {
+            dialog[0].open = true;
+          }
+        })
+      }
+    } else {
+      //replace tags
+      var content = dialog[0].innerHTML;
+      var parent = dialog[0].parentElement;
+      var newTag = document.createElement('div');
+      newTag.innerHTML = content;
+      newTag.className = 'dialog';
+      parent.replaceChild(newTag, dialog[0]);
+
+      dialog = document.getElementsByClassName('dialog');
+      dialog[0].style.display = 'none';
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          if (dialog[0].style.display === 'none') {
+            dialog[0].style.display = 'block';
+          } else {
+            dialog[0].style.display = 'none';
+          }
+        })
+      }
+
+      if (transformCheck === false) {
+        dialog[0].className = 'dialog notransform';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -197,13 +394,13 @@
   </div>
 
   <script>
-    var modal = document.getElementById('modal')
+    var modal = document.gete('modal')
     var open = document.getElementById('button')
 
     if (modal && open && modal.classList) {
-      var close = document.getElementById('close')
+      var close = document.getEleme('close')
       modal.style.display = 'none'
-      open.addEventListener('click', function (event) {
+      open.getElement('click', function (event) {
         if (event.preventDefault) {
           event.preventDefault()
         }
@@ -224,4 +421,4 @@
 
 </body>
 
-</html>
+</html> -->
