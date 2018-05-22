@@ -150,7 +150,7 @@
     }
 
     // check if dialog is available
-    if ("open" in document.createElement('dialog')) {
+    if ('open' in dialog) {
       for (var i = 0; i < buttons.length; i++) {
         if (typeof document.addEventListener === 'function') {
           buttons[i].addEventListener('click', function () {
