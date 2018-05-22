@@ -39,6 +39,14 @@ if (typeof document.addEventListener === 'function') {
 }
 ```
 
+### Device test
+
+#### Device lab
+![hamburger devicelab](images/devicelab-hamburger.png "Device lab")
+
+#### Browserstack
+![hamburger browserstack](images/browserstack-hamburger.png "Browserstack")
+
 **Bronnen**
 
 - [https://caniuse.com/#search=classlist](https://caniuse.com/#search=classlist)
@@ -57,7 +65,7 @@ De modal is in dit geval een pop-up, die getriggerd wordt door op een link te kl
 
 ### Feature detection
 ##### Dialog
-Het `dialog` element wordt niet ondersteund in alle browsers. Om het element toch als modal te laten functioneren, moeten de tags vervangen worden door een tag die de desbetreffende browser wel ondersteunt. In dit geval `div`.
+Het `dialog` element wordt pas vanaf Chrome 49 ondersteund. Om het element toch als modal te laten functioneren in andere browsers, moeten de tags vervangen worden door een tag die de desbetreffende browser wel ondersteunt. In dit geval `div`.
 
 ```javascript
 if ("open" in document.createElement('dialog')) {
@@ -69,7 +77,7 @@ else {
   ```
 
 #### CSS transform
-CSS 2D transform wordt in oudere browsers niet ondersteund. Hierdoor zal de modal uit het beeld verdwijnen, omdat `left: 50%;` en `top: 50%;` wel werken. Om dit te voorkomen, detecteer ik of transform beschikbaar is. ([bron](https://stackoverflow.com/a/12625986/6445473))
+CSS 2D transform wordt vanaf IE9 ondersteund. Hierdoor zal de modal uit het beeld verdwijnen in oudere browsers, omdat `left: 50%;` en `top: 50%;` wel werken. Om dit te voorkomen, detecteer ik of transform beschikbaar is. ([bron](https://stackoverflow.com/a/12625986/6445473))
 
 ```javascript
 var transformCheck = function () {
@@ -92,6 +100,14 @@ if (typeof document.addEventListener === 'function') {
   // preventDefault()
 }
 ```
+
+### Device test
+
+#### Device lab
+![modal devicelab](images/devicelab-modal.png "Device lab")
+
+#### Browserstack
+![modal browserstack](images/browserstack-modal.png "Browserstack")
 
 **Bronnen**
 
