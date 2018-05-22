@@ -24,10 +24,52 @@ Javascript wordt alleen uitgevoerd, wanneer de functie `classList` beschikbaar i
 De modal is in dit geval een pop-up, die getriggerd wordt door op een link te klikken. 
 
 ### Werking
-- De modal wordt zonder css en js weergegeven onder de tekst. Door middel van een anchor link scroll je naar de tekst bij het klikken op de link.
-- Zonder css is de modal niet zichtbaar, totdat je op de link klikt. Hierbij is de tekst ook te verbergen.
-- Zonder js wordt de modal getriggerd met de css `:target` selector.
+- Zonder css en js opent de link een nieuwe pagina met de algemene voorwaarden.
+- Met css en zonder js wordt er ook een nieuwe pagina geopend.
+- Met js en zonder css worden de algemene voorwaarden onder de link weergegeven. In chrome wordt de modal wel weergegeven, met behulp van het `dialog` element.
 
 ### Feature detection
-Net zoals bij de hamburger feature, wordt er gecheckt of de `classList` functie beschikbaar is: `if (modal && open && modal.classList)`
+##### Dialog
+Het `dialog` element wordt niet ondersteund in alle browsers. Om het element toch als modal te laten functioneren, moeten de tags vervangen worden door een tag die de desbetreffende browser wel ondersteunt. In dit geval `div`.
 
+```javascript
+if ("open" in document.createElement('dialog')) {
+  // use dialog.open
+}
+else {
+  // replace tags
+}
+  ```
+
+#### CSS transform
+CSS 2D transform wordt in oudere browsers niet ondersteund. Hierdoor zal de modal uit het beeld verdwijnen, omdat `left: 50%;` en `top: 50%;` wel werken. Om dit te voorkomen, detecteer ik of transform beschikbaar is. ([bron](https://stackoverflow.com/a/12625986/6445473))
+
+```javascript
+var transformCheck = function () {
+  var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' ');
+  var div = document.createElement('div');
+  for (var i = 0; i < prefixes.length; i++) {
+    if (div && div.style[prefixes[i]] !== undefined) {
+    return prefixes[i];
+    }
+  }
+  return false;
+}
+```
+
+#### AddEventListener 
+Ook AddEventListener wordt niet in elke browser ondersteund. De volgende code gebruik ik om bijvoorbeeld `preventDefault()` uit te voeren op de anchor tags. 
+
+```javascript
+if (typeof document.addEventListener === 'function') {
+  // preventDefault()
+}
+```
+
+**Bronnen**
+
+- [https://caniuse.com/#search=dialog](https://caniuse.com/#search=dialog)
+
+- [https://caniuse.com/#search=transform](https://caniuse.com/#search=transform)
+
+- [https://stackoverflow.com/a/12625986/6445473](https://stackoverflow.com/a/12625986/6445473)
