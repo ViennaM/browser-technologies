@@ -1,6 +1,8 @@
 # Browser Technologies
 //Robuuste, toegankelijke websites leren bouwen …
 
+**Demo's:**
+
 [Hamburger](https://viennam.github.io/browser-technologies/opdracht2/hamburger.html)
 
 [Modal](https://viennam.github.io/browser-technologies/opdracht2/modal.html)
@@ -39,8 +41,11 @@ if (typeof document.addEventListener === 'function') {
 
 **Bronnen**
 
+- [https://caniuse.com/#search=classlist](https://caniuse.com/#search=classlist)
+
 - [https://caniuse.com/#search=addeventlistener](https://caniuse.com/#search=addeventlistener)
 
+- [https://stackoverflow.com/questions/20180046/attachevent-doesnt-work-in-ie-8-0](https://stackoverflow.com/questions/20180046/attachevent-doesnt-work-in-ie-8-0)
 
 ## Modal
 De modal is in dit geval een pop-up, die getriggerd wordt door op een link te klikken. 
