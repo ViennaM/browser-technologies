@@ -135,9 +135,12 @@ N.v.t. (cookies worden niet gebruikt).
 - Door de structuur van html aan te passen is het nu mogelijk om te tabben naar de posters.
 - Door `:focus` toe te voegen aan css is het nu duidelijk waar op de pagina je je bevindt.
 
-## Device lab
-// Komt nog
+## Device test
+### Device lab
+![Device lab](images/devicelab.png "Device lab")
 
+### Browserstack
+![Browserstack](images/browserstack.png "Browserstack")
 
 ## Screen reader
 
