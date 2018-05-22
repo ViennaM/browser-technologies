@@ -151,15 +151,16 @@
 
     // check if dialog is available
     if ("open" in document.createElement('dialog')) {
-      document.createElement('dialog');
       for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function () {
-          if (dialog.open === true) {
-            dialog.open = false;
-          } else {
-            dialog.open = true;
-          }
-        })
+        if (typeof document.addEventListener === 'function') {
+          buttons[i].addEventListener('click', function () {
+            if (dialog.open === true) {
+              dialog.open = false;
+            } else {
+              dialog.open = true;
+            }
+          })
+        }
       }
     } else {
       //replace tags
@@ -175,13 +176,15 @@
       dialog.style.display = 'none';
 
       for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function () {
-          if (dialog.style.display === 'none') {
-            dialog.style.display = 'block';
-          } else {
-            dialog.style.display = 'none';
-          }
-        })
+        if (typeof document.addEventListener === 'function') {
+          buttons[i].addEventListener('click', function () {
+            if (dialog.style.display === 'none') {
+              dialog.style.display = 'block';
+            } else {
+              dialog.style.display = 'none';
+            }
+          })
+        }
       }
 
       if (transformCheck === false) {
