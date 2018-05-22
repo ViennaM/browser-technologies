@@ -62,7 +62,7 @@ Voorbeelden van oplossingen:
 [https://www.washington.edu/accessibility/checklist/focus/](https://www.washington.edu/accessibility/checklist/focus/)
 
 # Opdracht 1.2
-Voor deze opdracht check ik mijn OBA Web App op de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk. Vervolgens test ik de app in het device lab en laat ik het voorlezen door een screenreader. 
+Voor deze opdracht check ik mijn [OBA Web App](https://viennam.github.io/project1-quick-hack-prototype/) op de 8 features uit opdracht 1.1 en verbeter de code waar mogelijk. ([Verbeterde versie](https://posters-amsterdam.herokuapp.com/)) Vervolgens test ik de app in het device lab en laat ik het voorlezen door een screenreader. 
 
 ## 8 Features
 
