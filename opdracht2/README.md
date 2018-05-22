@@ -12,13 +12,35 @@ De eerste feature is een navigatie die verandert naar een hamburger icoon, zodra
 Het hamburger menu is opgebouwd uit drie lagen: html, css, js.
 - De navigatie zonder css en js wordt in html weergegeven als lijst.
 - Zonder js, wordt het hamburger icoon niet weergegeven, maar is de navigatie wel responsive.
-- Zonder css, wordt de button niet in de html geladen door javascript.
 
 Het icoon wordt dus met javascript ingeladen en de navigatie is altijd beschikbaar in html.
 
-#### Feature detection
-Javascript wordt alleen uitgevoerd, wanneer de functie `classList` beschikbaar is op de desbetreffende browser en wanneer er css beschikbaar is:
-`if (nav && nav.classList && document.getElementsByTagName('style').length === 1)`
+### Feature detection
+#### ClassList
+`ClassList` is pas vanaf IE10 deels ondersteund. Om `classList` te kunnen gebruiken, heb ik er een check omheen gezet. Wanneer `classList` niet beschikbaar is, gebruik ik `className`.
+
+```javascript
+var nav = document.getElementById('navigation')
+if (menu.classList) {
+  menu.classList.add('hide');
+} else {
+  menu.className = 'hide'
+}
+```
+#### AddEventListener
+`AddEventListener` wordt pas vanaf IE9 ondersteund. Deze functie vervang ik met `attachEvent` wanneer `addEventListener` niet wordt ondersteund. Ook check ik of `attachEvent` beschikbaar is, omdat deze functie tot IE10 is ondersteund.
+```javascript
+if (typeof document.addEventListener === 'function') {
+  hamburger.addEventListener('click', toggleMenu);
+} else if (typeof document.attachEvent === 'function'){
+  hamburger.attachEvent('onclick', toggleMenu);
+}
+```
+
+**Bronnen**
+
+- [https://caniuse.com/#search=addeventlistener](https://caniuse.com/#search=addeventlistener)
+
 
 ## Modal
 De modal is in dit geval een pop-up, die getriggerd wordt door op een link te klikken. 
