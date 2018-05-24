@@ -2401,6 +2401,8 @@
           }
           if (document.querySelectorAll('.contact:not(.hidden)').length === 0) {
             nothingEl.className = ''
+          } else {
+            nothingEl.className = 'hidden'
           }
         }
         if (document.body.getBoundingClientRect().height <= window.innerHeight) { // remove back to top button if body height < window height
@@ -2416,7 +2418,8 @@
         var alphabet = document.querySelectorAll('.letter') 
         var contactElements
         var hiddencount
-        if (typeof [].forEach === 'function') { // forEach fully supported from IE10
+        if (typeof NodeList.prototype.forEach === 'function') { // forEach fully supported from IE10
+
           alphabet.forEach(function (letter) {
             contactElements = letter.querySelectorAll('.contact')
             if (contactElements.length === 0) {
@@ -2459,7 +2462,7 @@
         var noContacts = document.querySelectorAll('.letter.hidden')
         var emptyLetters = []
         var shortcuts = document.querySelectorAll('.shortcut')
-        if (typeof [].forEach === 'function') { // forEach fully supported from IE10
+        if (typeof NodeList.prototype.forEach === 'function') { // forEach fully supported from IE10
           noContacts.forEach(function (contact) {
             emptyLetters.push(contact.id)
           })
@@ -2494,13 +2497,13 @@
     }
     if (typeof document.addEventListener === 'function') { //addEventListener supported from IE9
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) {
+        if (document.documentElement.scrollTop > 200) {
           backToTop.className = 'fixed'
         } else {
           backToTop.className = ''
         }
       })
-    } else {
+    } else if(typeof window.attachEvent === 'function'){
       window.attachEvent('onscroll', function () { //attachEvent supported <= IE8
         if (document.documentElement.scrollTop > 200) {
           backToTop.className = 'fixed'
