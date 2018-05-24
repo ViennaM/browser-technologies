@@ -25,10 +25,11 @@
       text-align: center;
       height: 100%;
       font-weight: 500;
+      font-size: 10px;
       font-size: 1.9vh;
       line-height: 2.5vh;
       right: 0;
-      padding: 30px 0;
+      padding: 10px 0;
     }
 
     .header h1 {
@@ -47,27 +48,27 @@
       text-decoration: none;
     }
 
-    .header nav a:focus,
-    .header nav a:hover {
+    .header .nav a:focus,
+    .header .nav a:hover {
       transform: scale(1.6);
       outline: none;
       background: #fff;
       border-radius: 5px;
     }
 
-    .header nav,
-    .header nav ol {
+    .header .nav,
+    .header .nav ol {
       height: 100%;
     }
 
-    nav ol {
+    .nav ol {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 10px 0;
+      padding: 20px 0;
     }
 
-    .header nav {
+    .header .nav {
       margin: 10px;
       height: calc(100% - 20px);
       background: #fff;
@@ -82,8 +83,8 @@
       color: #545871;
     }
 
-    nav li a {
-      padding: 8px 10px;
+    .nav li a {
+      padding: 5px 10px;
       display: block;
     }
 
@@ -269,21 +270,22 @@
         height: 50px;
         margin-right: 5px;
       }
-      div h2 {
+      #main div h2 {
         font-size: 16px;
         font-weight: 500;
       }
-      div h3 {
+      #main div h3 {
         font-size: 14px;
       }
     }
 
     @media screen and (max-height: 750px) {
       .header {
+        font-size: 10px;
         font-size: 1.6vh;
         line-height: 2.3vh;
       }
-      .header nav {
+      .header .nav {
         margin: 0;
         height: 100%;
       }
@@ -294,12 +296,13 @@
 
     @media screen and (max-height: 600px) {
       .header {
+        font-size: 12px;
         font-size: 2vh;
         line-height: 2vh;
       }
     }
 
-    .header div a {
+    .header .skip a {
       position: absolute;
       height: 1px;
       width: 1px;
@@ -307,7 +310,7 @@
       overflow: hidden;
     }
 
-    .header div a:focus {
+    .header .skip a:focus {
       height: auto;
       width: auto;
       margin: auto;
@@ -321,10 +324,10 @@
 <body>
   <div class="header">
     <h1>Navigatie</h1>
-    <div>
+    <div class="skip">
       <a href="#main">Navigatie overslaan</a>
     </div>
-    <nav>
+    <div class="nav">
       <ol>
         <li>
           <a href="#A" class="shortcut">A</a>
@@ -405,7 +408,7 @@
           <a href="#Z" class="shortcut">Z</a>
         </li>
       </ol>
-    </nav>
+    </div>
   </div>
   <div id="main">
     <h1>Contacten</h1>
@@ -2349,10 +2352,10 @@
       </li>
     </ol>
   </div>
-  <a href="#main">Terug naar boven</a>
+  <a href="#main" id="back">Terug naar boven</a>
 
   <script>
-    var backToTop = document.querySelector('body > a')
+    var backToTop = document.getElementById('back');
     if (typeof document.querySelectorAll === 'function') { // querySelectorAll fully supported from IE9
       var list = document.querySelectorAll('.contactName')
       var contacts = document.querySelectorAll('.contact')
@@ -2499,7 +2502,7 @@
       })
     } else {
       window.attachEvent('onscroll', function () { //attachEvent supported <= IE8
-        if (window.scrollY > 200) {
+        if (document.documentElement.scrollTop > 200) {
           backToTop.className = 'fixed'
         } else {
           backToTop.className = ''
