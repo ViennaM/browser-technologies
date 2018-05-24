@@ -83,7 +83,7 @@
     }
 
     nav li a {
-      padding: 0px 10px;
+      padding: 8px 10px;
       display: block;
     }
 
@@ -2352,14 +2352,11 @@
   <a href="#main">Terug naar boven</a>
 
   <script>
-    if (typeof document.querySelectorAll === 'function') { // querySelectorAll supported from IE9
-      var element = document.createElement('_')
-      var string = ''
-      var arr = []
+    var backToTop = document.querySelector('body > a')
+    if (typeof document.querySelectorAll === 'function') { // querySelectorAll fully supported from IE9
       var list = document.querySelectorAll('.contactName')
       var contacts = document.querySelectorAll('.contact')
       var contactList = document.querySelector('#contactList')
-      var backToTop = document.querySelector('body > a')
       var nothingEl = document.createElement('p')
       nothingEl.innerHTML = 'Geen contacten gevonden...'
       var searchEl = document.createElement('form')
@@ -2372,14 +2369,13 @@
       alphabet()
       getShortcuts()
 
-      var searchInput = document.querySelector('#search') // getElementById supported in all browsers
+      var searchInput = document.querySelector('#search')
       var form = document.querySelectorAll('form')
-      if (typeof document.addEventListener === 'function') { // addEventListener supported from IE9
-        form[0].addEventListener('submit', function (event) {
-          event.preventDefault()
-        })
-        searchInput.addEventListener('input', search)
-      }
+      form[0].addEventListener('submit', function (event) {
+        event.preventDefault()
+      })
+      searchInput.addEventListener('input', search)
+
 
       function search() {
         for (var i = 0; i < contacts.length; i++) {
@@ -2404,7 +2400,7 @@
             nothingEl.className = ''
           }
         }
-        if (document.body.getBoundingClientRect().height <= window.innerHeight) {
+        if (document.body.getBoundingClientRect().height <= window.innerHeight) { // remove back to top button if body height < window height
           backToTop.className = 'hidden'
         }
         alphabet()
@@ -2417,20 +2413,40 @@
         var alphabet = document.querySelectorAll('.letter') // supported if getElementsByClassName is supported, feature detection not needed
         var contactElements
         var hiddencount
-        for (var i = 0; i < alphabet.length; i++) {
-          contactElements = alphabet[i].querySelectorAll('.contact')
-          if (contactElements.length === 0) {
-            alphabet[i].className = 'letter hidden'
-          }
-          hiddencount = 0
-          for (var j = 0; j < contactElements.length; j++) {
-            if (contactElements[j].className.indexOf('hidden') >= 0) {
-              hiddencount++
+        if (typeof [].forEach === 'function') { // forEach fully supported from IE10
+          alphabet.forEach(function (letter) {
+            contactElements = letter.querySelectorAll('.contact')
+            if (contactElements.length === 0) {
+              letter.className = 'letter hidden'
             }
-            if (hiddencount === contactElements.length) {
-              contactElements[j].parentElement.parentElement.className = 'letter hidden'
-            } else {
-              contactElements[j].parentElement.parentElement.className = 'letter'
+            hiddencount = 0
+            contactElements.forEach(function (el) {
+              if (el.className.indexOf('hidden') >= 0) {
+                hiddencount++
+              }
+              if (hiddencount === contactElements.length) {
+                el.parentElement.parentElement.className = 'letter hidden'
+              } else {
+                el.parentElement.parentElement.className = 'letter'
+              }
+            })
+          })
+        } else {
+          for (var i = 0; i < alphabet.length; i++) {
+            contactElements = alphabet[i].querySelectorAll('.contact')
+            if (contactElements.length === 0) {
+              alphabet[i].className = 'letter hidden'
+            }
+            hiddencount = 0
+            for (var j = 0; j < contactElements.length; j++) {
+              if (contactElements[j].className.indexOf('hidden') >= 0) {
+                hiddencount++
+              }
+              if (hiddencount === contactElements.length) {
+                contactElements[j].parentElement.parentElement.className = 'letter hidden'
+              } else {
+                contactElements[j].parentElement.parentElement.className = 'letter'
+              }
             }
           }
         }
@@ -2440,31 +2456,56 @@
         var noContacts = document.querySelectorAll('.letter.hidden')
         var emptyLetters = []
         var shortcuts = document.querySelectorAll('.shortcut')
-        for (var i = 0; i < noContacts.length; i++) {
-          emptyLetters.push(noContacts[i].id)
-        }
-
-        for (var i = 0; i < shortcuts.length; i++) {
-          var visible = false
-          for (var j = 0; j < emptyLetters.length; j++) {
-            if (emptyLetters[j] === shortcuts[i].innerHTML) {
-              shortcuts[i].parentElement.className = 'hidden'
-              visible = true
-            } else if (!visible) {
-              shortcuts[i].parentElement.className = ''
+        if (typeof [].forEach === 'function') { // forEach fully supported from IE10
+          noContacts.forEach(function (contact) {
+            emptyLetters.push(contact.id)
+          })
+          shortcuts.forEach(function (shortcut) {
+            var visible = false
+            emptyLetters.forEach(function (letter) {
+              if (letter === shortcut.innerHTML) {
+                shortcut.parentElement.className = 'hidden'
+                visible = true
+              } else if (!visible) {
+                shortcut.parentElement.className = ''
+              }
+            })
+          })
+        } else {
+          for (var i = 0; i < noContacts.length; i++) {
+            emptyLetters.push(noContacts[i].id)
+          }
+          for (var i = 0; i < shortcuts.length; i++) {
+            var visible = false
+            for (var j = 0; j < emptyLetters.length; j++) {
+              if (emptyLetters[j] === shortcuts[i].innerHTML) {
+                shortcuts[i].parentElement.className = 'hidden'
+                visible = true
+              } else if (!visible) {
+                shortcuts[i].parentElement.className = ''
+              }
             }
           }
         }
       }
     }
-
-    window.addEventListener('scroll', function (e) {
-      if (window.scrollY > 200) {
-        backToTop.className = 'fixed'
-      } else {
-        backToTop.className = ''
-      }
-    })
+    if (typeof document.addEventListener === 'function') { //addEventListener supported from IE9
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) {
+          backToTop.className = 'fixed'
+        } else {
+          backToTop.className = ''
+        }
+      })
+    } else {
+      window.attachEvent('onscroll', function () { //attachEvent supported <= IE8
+        if (window.scrollY > 200) {
+          backToTop.className = 'fixed'
+        } else {
+          backToTop.className = ''
+        }
+      })
+    }
   </script>
 </body>
 
