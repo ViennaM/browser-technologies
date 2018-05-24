@@ -2359,10 +2359,15 @@
       var list = document.querySelectorAll('.contactName')
       var contacts = document.querySelectorAll('.contact')
       var contactList = document.querySelector('#contactList')
+      var backToTop = document.querySelector('body > a')
+      var nothingEl = document.createElement('p')
+      nothingEl.innerHTML = 'Geen contacten gevonden...'
       var searchEl = document.createElement('form')
       searchEl.innerHTML =
         '<label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search">'
       contactList.parentElement.insertBefore(searchEl, contactList)
+      document.querySelector('#main').appendChild(nothingEl)
+      nothingEl.className = 'hidden'
 
       alphabet()
       getShortcuts()
@@ -2395,6 +2400,12 @@
               contacts[i].className = 'contact'
             }
           }
+          if (document.querySelectorAll('.contact:not(.hidden)').length === 0) {
+            nothingEl.className = ''
+          }
+        }
+        if (document.body.getBoundingClientRect().height <= window.innerHeight) {
+          backToTop.className = 'hidden'
         }
         alphabet()
         getShortcuts()
@@ -2447,7 +2458,6 @@
       }
     }
 
-    var backToTop = document.querySelector('body > a')
     window.addEventListener('scroll', function (e) {
       if (window.scrollY > 200) {
         backToTop.className = 'fixed'
