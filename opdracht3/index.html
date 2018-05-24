@@ -20,7 +20,7 @@
       font-weight: 400;
     }
 
-    header {
+    .header {
       position: fixed;
       text-align: center;
       height: 100%;
@@ -28,9 +28,10 @@
       font-size: 1.9vh;
       line-height: 2.5vh;
       right: 0;
+      padding: 30px 0;
     }
 
-    header h1 {
+    .header h1 {
       height: 1px;
       width: 1px;
       display: block;
@@ -42,20 +43,20 @@
       color: #545871;
     }
 
-    header a {
+    .header a {
       text-decoration: none;
     }
 
-    header nav a:focus,
-    header nav a:hover {
+    .header nav a:focus,
+    .header nav a:hover {
       transform: scale(1.6);
       outline: none;
       background: #fff;
       border-radius: 5px;
     }
 
-    header nav,
-    header nav ol {
+    .header nav,
+    .header nav ol {
       height: 100%;
     }
 
@@ -63,9 +64,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 10px 0;
     }
 
-    header nav {
+    .header nav {
       margin: 10px;
       height: calc(100% - 20px);
       background: #fff;
@@ -81,7 +83,7 @@
     }
 
     nav li a {
-      padding: 5px 10px;
+      padding: 0px 10px;
       display: block;
     }
 
@@ -92,7 +94,8 @@
       padding: 0;
     }
 
-    main {
+    main,
+    #main {
       width: 90%;
       max-width: 500px;
       margin: 0 auto;
@@ -182,7 +185,8 @@
       color: #545871;
     }
 
-    main li>a {
+    main li>a,
+    #main li>a {
       text-decoration: none;
       font-weight: 500;
       background: #f5f6fa;
@@ -194,9 +198,10 @@
     }
 
     @supports(position:sticky) {
-      main li>a {
-      position: sticky;
-      top: -1px;
+      main li>a,
+      #main li>a {
+        position: sticky;
+        top: -1px;
       }
     }
 
@@ -227,10 +232,12 @@
       display: block;
       overflow: hidden;
       margin: 0;
+      display: none;
     }
 
     @media screen and (max-height: 812px) and (max-width: 400px) {
-      main {
+      main,
+      #main {
         width: 80%;
         max-width: 500px;
         margin: 0 25px 0 15px;
@@ -259,27 +266,28 @@
     }
 
     @media screen and (max-height: 750px) {
-      header {
+      .header {
         font-size: 1.6vh;
         line-height: 2.3vh;
       }
-      header nav {
+      .header nav {
         margin: 0;
         height: 100%;
       }
-      main {
+      main,
+      #main {
         width: 85%;
       }
     }
 
     @media screen and (max-height: 600px) {
-      header {
+      .header {
         font-size: 2vh;
         line-height: 2vh;
       }
     }
 
-    header div a {
+    .header div a {
       position: absolute;
       height: 1px;
       width: 1px;
@@ -287,7 +295,7 @@
       overflow: hidden;
     }
 
-    header div a:focus {
+    .header div a:focus {
       height: auto;
       width: auto;
       margin: auto;
@@ -299,7 +307,7 @@
 </head>
 
 <body>
-  <header>
+  <div class="header">
     <h1>Navigatie</h1>
     <div>
       <a href="#main">Navigatie overslaan</a>
@@ -307,98 +315,98 @@
     <nav>
       <ol>
         <li>
-          <a href="#A">A</a>
+          <a href="#A" class="shortcut">A</a>
         </li>
         <li>
-          <a href="#B">B</a>
+          <a href="#B" class="shortcut">B</a>
         </li>
         <li>
-          <a href="#C">C</a>
+          <a href="#C" class="shortcut">C</a>
         </li>
         <li>
-          <a href="#D">D</a>
+          <a href="#D" class="shortcut">D</a>
         </li>
         <li>
-          <a href="#E">E</a>
+          <a href="#E" class="shortcut">E</a>
         </li>
         <li>
-          <a href="#F">F</a>
+          <a href="#F" class="shortcut">F</a>
         </li>
         <li>
-          <a href="#G">G</a>
+          <a href="#G" class="shortcut">G</a>
         </li>
         <li>
-          <a href="#H">H</a>
+          <a href="#H" class="shortcut">H</a>
         </li>
         <li>
-          <a href="#I">I</a>
+          <a href="#I" class="shortcut">I</a>
         </li>
         <li>
-          <a href="#J">J</a>
+          <a href="#J" class="shortcut">J</a>
         </li>
         <li>
-          <a href="#K">K</a>
+          <a href="#K" class="shortcut">K</a>
         </li>
         <li>
-          <a href="#L">L</a>
+          <a href="#L" class="shortcut">L</a>
         </li>
         <li>
-          <a href="#M">M</a>
+          <a href="#M" class="shortcut">M</a>
         </li>
         <li>
-          <a href="#N">N</a>
+          <a href="#N" class="shortcut">N</a>
         </li>
         <li>
-          <a href="#O">O</a>
+          <a href="#O" class="shortcut">O</a>
         </li>
         <li>
-          <a href="#P">P</a>
+          <a href="#P" class="shortcut">P</a>
         </li>
         <li>
-          <a href="#Q">Q</a>
+          <a href="#Q" class="shortcut">Q</a>
         </li>
         <li>
-          <a href="#R">R</a>
+          <a href="#R" class="shortcut">R</a>
         </li>
         <li>
-          <a href="#S">S</a>
+          <a href="#S" class="shortcut">S</a>
         </li>
         <li>
-          <a href="#T">T</a>
+          <a href="#T" class="shortcut">T</a>
         </li>
         <li>
-          <a href="#U">U</a>
+          <a href="#U" class="shortcut">U</a>
         </li>
         <li>
-          <a href="#V">V</a>
+          <a href="#V" class="shortcut">V</a>
         </li>
         <li>
-          <a href="#W">W</a>
+          <a href="#W" class="shortcut">W</a>
         </li>
         <li>
-          <a href="#X">X</a>
+          <a href="#X" class="shortcut">X</a>
         </li>
         <li>
-          <a href="#Y">Y</a>
+          <a href="#Y" class="shortcut">Y</a>
         </li>
         <li>
-          <a href="#Z">Z</a>
+          <a href="#Z" class="shortcut">Z</a>
         </li>
       </ol>
     </nav>
-  </header>
-  <main id="main">
+  </div>
+  <div id="main">
     <h1>Contacten</h1>
-    <ol>
-      <li id="A">
+    <ol id="contactList">
+      <li class="letter" id="A">
         <a href="#A">A</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/11.jpg" alt="foto Heleen van Asten">
                 <div>
-                  <h2>Heleen van Asten</h2>
+                  <h2 class="contactName">Heleen van Asten</h2>
                   <h3>(747) 845 5653</h3>
                 </div>
               </summary>
@@ -418,13 +426,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/14.jpg" alt="foto Renske Aarentsen">
                 <div>
-                  <h2>Renske Aarentsen</h2>
+                  <h2 class="contactName">Renske Aarentsen</h2>
                   <h3>(694) 111 2484</h3>
                 </div>
               </summary>
@@ -446,15 +453,15 @@
           </li>
         </ol>
       </li>
-      <li id="B">
+      <li class="letter" id="B">
         <a href="#B">B</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/3.jpg" alt="foto Paulien van den Berg">
                 <div>
-                  <h2>Paulien van den Berg</h2>
+                  <h2 class="contactName">Paulien van den Berg</h2>
                   <h3>(154) 829 5870</h3>
                 </div>
               </summary>
@@ -474,13 +481,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/19.jpg" alt="foto Willem de Boer">
                 <div>
-                  <h2>Willem de Boer</h2>
+                  <h2 class="contactName">Willem de Boer</h2>
                   <h3>(224) 618 3897</h3>
                 </div>
               </summary>
@@ -500,13 +506,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/20.jpg" alt="foto Barbara de Boer">
                 <div>
-                  <h2>Barbara de Boer</h2>
+                  <h2 class="contactName">Barbara de Boer</h2>
                   <h3>(167) 489 1033</h3>
                 </div>
               </summary>
@@ -526,13 +531,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/17.jpg" alt="foto Femke de Boer">
                 <div>
-                  <h2>Femke de Boer</h2>
+                  <h2 class="contactName">Femke de Boer</h2>
                   <h3>(381) 879 7486</h3>
                 </div>
               </summary>
@@ -552,13 +556,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/11.jpg" alt="foto Willemijn Bos">
                 <div>
-                  <h2>Willemijn Bos</h2>
+                  <h2 class="contactName">Willemijn Bos</h2>
                   <h3>(307) 674 4397</h3>
                 </div>
               </summary>
@@ -578,13 +581,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/23.jpg" alt="foto Suzanne Bosman">
                 <div>
-                  <h2>Suzanne Bosman</h2>
+                  <h2 class="contactName">Suzanne Bosman</h2>
                   <h3>(843) 581 2144</h3>
                 </div>
               </summary>
@@ -604,13 +606,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/18.jpg" alt="foto Olaf de Bruijn">
                 <div>
-                  <h2>Olaf de Bruijn</h2>
+                  <h2 class="contactName">Olaf de Bruijn</h2>
                   <h3>(950) 989 4401</h3>
                 </div>
               </summary>
@@ -630,13 +631,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/11.jpg" alt="foto Barbara de Bruin">
                 <div>
-                  <h2>Barbara de Bruin</h2>
+                  <h2 class="contactName">Barbara de Bruin</h2>
                   <h3>(273) 670 9413</h3>
                 </div>
               </summary>
@@ -656,13 +656,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/9.jpg" alt="foto Thijs de Bruin">
                 <div>
-                  <h2>Thijs de Bruin</h2>
+                  <h2 class="contactName">Thijs de Bruin</h2>
                   <h3>(182) 842 1945</h3>
                 </div>
               </summary>
@@ -682,13 +681,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/3.jpg" alt="foto Anna de Bruin">
                 <div>
-                  <h2>Anna de Bruin</h2>
+                  <h2 class="contactName">Anna de Bruin</h2>
                   <h3>(744) 498 7979</h3>
                 </div>
               </summary>
@@ -710,18 +708,45 @@
           </li>
         </ol>
       </li>
-      <li id="C">
+      <li class="letter" id="C">
         <a href="#C">C</a>
+        <ol>
+          <li class="contact">
+            <details>
+              <summary>
+                <img src="https://uinames.com/api/photos/female/1.jpg" alt="foto Paulien Carelse">
+                <div>
+                  <h2 class="contactName">Paulien Carelse</h2>
+                  <h3>(154) 829 5870</h3>
+                </div>
+              </summary>
+              <ul>
+                <li>
+                  <h4>Mobiel:</h4>
+                  <p>
+                    <a href="tel:+(154) 829 5870">(154) 829 5870</a>
+                  </p>
+                </li>
+                <li>
+                  <h4>E-mailadres:</h4>
+                  <p>
+                    <a href="mailto:paulien van den_87@gmail.com">paulien van den_87@gmail.com</a>
+                  </p>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ol>
       </li>
-      <li id="D">
+      <li class="letter" id="D">
         <a href="#D">D</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/17.jpg" alt="foto Maaike van Dam">
                 <div>
-                  <h2>Maaike van Dam</h2>
+                  <h2 class="contactName">Maaike van Dam</h2>
                   <h3>(553) 487 1682</h3>
                 </div>
               </summary>
@@ -741,13 +766,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/11.jpg" alt="foto Sjors Dekker">
                 <div>
-                  <h2>Sjors Dekker</h2>
+                  <h2 class="contactName">Sjors Dekker</h2>
                   <h3>(920) 113 9288</h3>
                 </div>
               </summary>
@@ -767,13 +791,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/7.jpg" alt="foto Wim Dijkstra">
                 <div>
-                  <h2>Wim Dijkstra</h2>
+                  <h2 class="contactName">Wim Dijkstra</h2>
                   <h3>(635) 373 4670</h3>
                 </div>
               </summary>
@@ -793,13 +816,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/20.jpg" alt="foto Hanneke van Dongen">
                 <div>
-                  <h2>Hanneke van Dongen</h2>
+                  <h2 class="contactName">Hanneke van Dongen</h2>
                   <h3>(823) 929 5307</h3>
                 </div>
               </summary>
@@ -819,13 +841,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/1.jpg" alt="foto Wouter van Dongen">
                 <div>
-                  <h2>Wouter van Dongen</h2>
+                  <h2 class="contactName">Wouter van Dongen</h2>
                   <h3>(659) 471 3278</h3>
                 </div>
               </summary>
@@ -845,13 +866,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/25.jpg" alt="foto Yasmijn van Doorn">
                 <div>
-                  <h2>Yasmijn van Doorn</h2>
+                  <h2 class="contactName">Yasmijn van Doorn</h2>
                   <h3>(253) 100 8901</h3>
                 </div>
               </summary>
@@ -873,21 +893,21 @@
           </li>
         </ol>
       </li>
-      <li id="E">
+      <li class="letter" id="E">
         <a href="#E">E</a>
       </li>
-      <li id="F">
+      <li class="letter" id="F">
         <a href="#F">F</a>
       </li>
-      <li id="G">
+      <li class="letter" id="G">
         <a href="#G">G</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/5.jpg" alt="foto Valentijn Gerritsen">
                 <div>
-                  <h2>Valentijn Gerritsen</h2>
+                  <h2 class="contactName">Valentijn Gerritsen</h2>
                   <h3>(445) 105 5467</h3>
                 </div>
               </summary>
@@ -907,13 +927,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/3.jpg" alt="foto Harm de Graaf">
                 <div>
-                  <h2>Harm de Graaf</h2>
+                  <h2 class="contactName">Harm de Graaf</h2>
                   <h3>(460) 461 1708</h3>
                 </div>
               </summary>
@@ -933,13 +952,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/13.jpg" alt="foto Veerle Groen">
                 <div>
-                  <h2>Veerle Groen</h2>
+                  <h2 class="contactName">Veerle Groen</h2>
                   <h3>(599) 962 7379</h3>
                 </div>
               </summary>
@@ -959,13 +977,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/15.jpg" alt="foto Gerrit Groen">
                 <div>
-                  <h2>Gerrit Groen</h2>
+                  <h2 class="contactName">Gerrit Groen</h2>
                   <h3>(927) 661 1229</h3>
                 </div>
               </summary>
@@ -985,13 +1002,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/11.jpg" alt="foto Geert de Groot">
                 <div>
-                  <h2>Geert de Groot</h2>
+                  <h2 class="contactName">Geert de Groot</h2>
                   <h3>(548) 179 1877</h3>
                 </div>
               </summary>
@@ -1011,18 +1027,17 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="H">
+      <li class="letter" id="H">
         <a href="#H">H</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/18.jpg" alt="foto Sjors Hendriks">
                 <div>
-                  <h2>Sjors Hendriks</h2>
+                  <h2 class="contactName">Sjors Hendriks</h2>
                   <h3>(551) 921 9964</h3>
                 </div>
               </summary>
@@ -1042,13 +1057,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/15.jpg" alt="foto Harm Hoekstra">
                 <div>
-                  <h2>Harm Hoekstra</h2>
+                  <h2 class="contactName">Harm Hoekstra</h2>
                   <h3>(847) 686 8142</h3>
                 </div>
               </summary>
@@ -1068,13 +1082,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/7.jpg" alt="foto Sjors Huisman">
                 <div>
-                  <h2>Sjors Huisman</h2>
+                  <h2 class="contactName">Sjors Huisman</h2>
                   <h3>(721) 932 7635</h3>
                 </div>
               </summary>
@@ -1094,21 +1107,47 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="I">
+      <li class="letter" id="I">
         <a href="#I">I</a>
+        <ol>
+          <li class="contact">
+            <details>
+              <summary>
+                <img src="https://uinames.com/api/photos/female/1.jpg" alt="foto Paulien IJssel">
+                <div>
+                  <h2 class="contactName">Paulien IJssel</h2>
+                  <h3>(154) 829 5870</h3>
+                </div>
+              </summary>
+              <ul>
+                <li>
+                  <h4>Mobiel:</h4>
+                  <p>
+                    <a href="tel:+(154) 829 5870">(154) 829 5870</a>
+                  </p>
+                </li>
+                <li>
+                  <h4>E-mailadres:</h4>
+                  <p>
+                    <a href="mailto:paulien van den_87@gmail.com">paulien van den_87@gmail.com</a>
+                  </p>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ol>
       </li>
-      <li id="J">
+      <li class="letter" id="J">
         <a href="#J">J</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/10.jpg" alt="foto Dirk Jacobs">
                 <div>
-                  <h2>Dirk Jacobs</h2>
+                  <h2 class="contactName">Dirk Jacobs</h2>
                   <h3>(934) 349 1475</h3>
                 </div>
               </summary>
@@ -1128,13 +1167,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/13.jpg" alt="foto Barbara de Jong">
                 <div>
-                  <h2>Barbara de Jong</h2>
+                  <h2 class="contactName">Barbara de Jong</h2>
                   <h3>(540) 499 5289</h3>
                 </div>
               </summary>
@@ -1154,13 +1192,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/20.jpg" alt="foto Teun de Jong">
                 <div>
-                  <h2>Teun de Jong</h2>
+                  <h2 class="contactName">Teun de Jong</h2>
                   <h3>(656) 403 7435</h3>
                 </div>
               </summary>
@@ -1180,13 +1217,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/9.jpg" alt="foto Ineke Jonker">
                 <div>
-                  <h2>Ineke Jonker</h2>
+                  <h2 class="contactName">Ineke Jonker</h2>
                   <h3>(595) 471 4176</h3>
                 </div>
               </summary>
@@ -1206,18 +1242,17 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="K">
+      <li class="letter" id="K">
         <a href="#K">K</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/3.jpg" alt="foto Lieke Koster">
                 <div>
-                  <h2>Lieke Koster</h2>
+                  <h2 class="contactName">Lieke Koster</h2>
                   <h3>(474) 817 7106</h3>
                 </div>
               </summary>
@@ -1237,13 +1272,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/20.jpg" alt="foto Twan Koster">
                 <div>
-                  <h2>Twan Koster</h2>
+                  <h2 class="contactName">Twan Koster</h2>
                   <h3>(781) 690 6730</h3>
                 </div>
               </summary>
@@ -1263,13 +1297,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/5.jpg" alt="foto Corien Kramer">
                 <div>
-                  <h2>Corien Kramer</h2>
+                  <h2 class="contactName">Corien Kramer</h2>
                   <h3>(734) 800 2821</h3>
                 </div>
               </summary>
@@ -1289,13 +1322,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/3.jpg" alt="foto Lisa Kuiper">
                 <div>
-                  <h2>Lisa Kuiper</h2>
+                  <h2 class="contactName">Lisa Kuiper</h2>
                   <h3>(765) 608 9753</h3>
                 </div>
               </summary>
@@ -1315,13 +1347,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/26.jpg" alt="foto Lotte Kuiper">
                 <div>
-                  <h2>Lotte Kuiper</h2>
+                  <h2 class="contactName">Lotte Kuiper</h2>
                   <h3>(383) 553 5218</h3>
                 </div>
               </summary>
@@ -1341,13 +1372,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/6.jpg" alt="foto Wies Kuipers">
                 <div>
-                  <h2>Wies Kuipers</h2>
+                  <h2 class="contactName">Wies Kuipers</h2>
                   <h3>(979) 977 9471</h3>
                 </div>
               </summary>
@@ -1367,18 +1397,17 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="L">
+      <li class="letter" id="L">
         <a href="#L">L</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/6.jpg" alt="foto Boudewijn de Lange">
                 <div>
-                  <h2>Boudewijn de Lange</h2>
+                  <h2 class="contactName">Boudewijn de Lange</h2>
                   <h3>(500) 559 7209</h3>
                 </div>
               </summary>
@@ -1398,13 +1427,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/18.jpg" alt="foto Mathijs van Leeuwen">
                 <div>
-                  <h2>Mathijs van Leeuwen</h2>
+                  <h2 class="contactName">Mathijs van Leeuwen</h2>
                   <h3>(281) 419 4284</h3>
                 </div>
               </summary>
@@ -1424,13 +1452,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/1.jpg" alt="foto Kees van der Linden">
                 <div>
-                  <h2>Kees van der Linden</h2>
+                  <h2 class="contactName">Kees van der Linden</h2>
                   <h3>(123) 697 6317</h3>
                 </div>
               </summary>
@@ -1450,18 +1477,17 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="M">
+      <li class="letter" id="M">
         <a href="#M">M</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/16.jpg" alt="foto Twan van der Meer">
                 <div>
-                  <h2>Twan van der Meer</h2>
+                  <h2 class="contactName">Twan van der Meer</h2>
                   <h3>(784) 784 4935</h3>
                 </div>
               </summary>
@@ -1481,13 +1507,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/24.jpg" alt="foto Suzanne van der Meer">
                 <div>
-                  <h2>Suzanne van der Meer</h2>
+                  <h2 class="contactName">Suzanne van der Meer</h2>
                   <h3>(617) 267 5493</h3>
                 </div>
               </summary>
@@ -1507,13 +1532,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/17.jpg" alt="foto Mirthe Meijer">
                 <div>
-                  <h2>Mirthe Meijer</h2>
+                  <h2 class="contactName">Mirthe Meijer</h2>
                   <h3>(168) 326 9503</h3>
                 </div>
               </summary>
@@ -1533,13 +1557,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/23.jpg" alt="foto Ineke van der Meulen">
                 <div>
-                  <h2>Ineke van der Meulen</h2>
+                  <h2 class="contactName">Ineke van der Meulen</h2>
                   <h3>(983) 215 1316</h3>
                 </div>
               </summary>
@@ -1559,13 +1582,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/12.jpg" alt="foto Twan Mol">
                 <div>
-                  <h2>Twan Mol</h2>
+                  <h2 class="contactName">Twan Mol</h2>
                   <h3>(423) 608 6261</h3>
                 </div>
               </summary>
@@ -1585,24 +1607,50 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="N">
+      <li class="letter" id="N">
         <a href="#N">N</a>
       </li>
-      <li id="O">
-        <a href="#O">O</a>
-      </li>
-      <li id="P">
+      <li class="letter" id="O">
+          <a href="#O">O</a>
+          <ol>
+            <li class="contact">
+              <details>
+                <summary>
+                  <img src="https://uinames.com/api/photos/male/1.jpg" alt="foto Johan Olsen">
+                  <div>
+                    <h2 class="contactName">Johan Olsen</h2>
+                    <h3>(154) 829 5670</h3>
+                  </div>
+                </summary>
+                <ul>
+                  <li>
+                    <h4>Mobiel:</h4>
+                    <p>
+                      <a href="tel:+(154) 829 5870">(154) 829 5870</a>
+                    </p>
+                  </li>
+                  <li>
+                    <h4>E-mailadres:</h4>
+                    <p>
+                      <a href="mailto:paulien van den_87@gmail.com">paulien van den_87@gmail.com</a>
+                    </p>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ol>
+        </li>
+      <li class="letter" id="P">
         <a href="#P">P</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/18.jpg" alt="foto Jack van der Pol">
                 <div>
-                  <h2>Jack van der Pol</h2>
+                  <h2 class="contactName">Jack van der Pol</h2>
                   <h3>(926) 898 5496</h3>
                 </div>
               </summary>
@@ -1622,13 +1670,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/21.jpg" alt="foto Willemijn Post">
                 <div>
-                  <h2>Willemijn Post</h2>
+                  <h2 class="contactName">Willemijn Post</h2>
                   <h3>(970) 588 5613</h3>
                 </div>
               </summary>
@@ -1648,21 +1695,20 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="Q">
+      <li class="letter" id="Q">
         <a href="#Q">Q</a>
       </li>
-      <li id="R">
+      <li class="letter" id="R">
         <a href="#R">R</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/25.jpg" alt="foto Elise de Ruiter">
                 <div>
-                  <h2>Elise de Ruiter</h2>
+                  <h2 class="contactName">Elise de Ruiter</h2>
                   <h3>(273) 547 1470</h3>
                 </div>
               </summary>
@@ -1684,15 +1730,15 @@
           </li>
         </ol>
       </li>
-      <li id="S">
+      <li class="letter" id="S">
         <a href="#S">S</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/14.jpg" alt="foto Thijs Sanders">
                 <div>
-                  <h2>Thijs Sanders</h2>
+                  <h2 class="contactName">Thijs Sanders</h2>
                   <h3>(332) 753 4622</h3>
                 </div>
               </summary>
@@ -1712,13 +1758,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/19.jpg" alt="foto Wim Schipper">
                 <div>
-                  <h2>Wim Schipper</h2>
+                  <h2 class="contactName">Wim Schipper</h2>
                   <h3>(261) 287 7632</h3>
                 </div>
               </summary>
@@ -1738,13 +1783,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/20.jpg" alt="foto Henk Scholten">
                 <div>
-                  <h2>Henk Scholten</h2>
+                  <h2 class="contactName">Henk Scholten</h2>
                   <h3>(579) 189 6541</h3>
                 </div>
               </summary>
@@ -1764,13 +1808,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/4.jpg" alt="foto Eelco Scholten">
                 <div>
-                  <h2>Eelco Scholten</h2>
+                  <h2 class="contactName">Eelco Scholten</h2>
                   <h3>(768) 481 4972</h3>
                 </div>
               </summary>
@@ -1790,13 +1833,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/6.jpg" alt="foto Boudewijn Schouten">
                 <div>
-                  <h2>Boudewijn Schouten</h2>
+                  <h2 class="contactName">Boudewijn Schouten</h2>
                   <h3>(304) 240 1229</h3>
                 </div>
               </summary>
@@ -1816,13 +1858,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/13.jpg" alt="foto Willeke Smits">
                 <div>
-                  <h2>Willeke Smits</h2>
+                  <h2 class="contactName">Willeke Smits</h2>
                   <h3>(158) 406 8948</h3>
                 </div>
               </summary>
@@ -1842,13 +1883,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/19.jpg" alt="foto Thomas Smits">
                 <div>
-                  <h2>Thomas Smits</h2>
+                  <h2 class="contactName">Thomas Smits</h2>
                   <h3>(673) 223 3477</h3>
                 </div>
               </summary>
@@ -1868,24 +1908,23 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="T">
+      <li class="letter" id="T">
         <a href="#T">T</a>
       </li>
-      <li id="U">
+      <li class="letter" id="U">
         <a href="#U">U</a>
       </li>
-      <li id="V">
+      <li class="letter" id="V">
         <a href="#V">V</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/20.jpg" alt="foto Ivo van der Veen">
                 <div>
-                  <h2>Ivo van der Veen</h2>
+                  <h2 class="contactName">Ivo van der Veen</h2>
                   <h3>(842) 435 5671</h3>
                 </div>
               </summary>
@@ -1905,13 +1944,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/13.jpg" alt="foto Eefke van der Veen">
                 <div>
-                  <h2>Eefke van der Veen</h2>
+                  <h2 class="contactName">Eefke van der Veen</h2>
                   <h3>(326) 937 2836</h3>
                 </div>
               </summary>
@@ -1931,13 +1969,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/10.jpg" alt="foto Ineke van Veen">
                 <div>
-                  <h2>Ineke van Veen</h2>
+                  <h2 class="contactName">Ineke van Veen</h2>
                   <h3>(756) 697 7793</h3>
                 </div>
               </summary>
@@ -1957,13 +1994,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/26.jpg" alt="foto Maartje van de Velde">
                 <div>
-                  <h2>Maartje van de Velde</h2>
+                  <h2 class="contactName">Maartje van de Velde</h2>
                   <h3>(384) 412 3295</h3>
                 </div>
               </summary>
@@ -1983,13 +2019,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/7.jpg" alt="foto Vincent van der Velden">
                 <div>
-                  <h2>Vincent van der Velden</h2>
+                  <h2 class="contactName">Vincent van der Velden</h2>
                   <h3>(634) 508 9593</h3>
                 </div>
               </summary>
@@ -2009,13 +2044,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/5.jpg" alt="foto Thijs Verbeek">
                 <div>
-                  <h2>Thijs Verbeek</h2>
+                  <h2 class="contactName">Thijs Verbeek</h2>
                   <h3>(466) 747 9497</h3>
                 </div>
               </summary>
@@ -2035,13 +2069,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/10.jpg" alt="foto Geert Verhoeven">
                 <div>
-                  <h2>Geert Verhoeven</h2>
+                  <h2 class="contactName">Geert Verhoeven</h2>
                   <h3>(903) 463 1314</h3>
                 </div>
               </summary>
@@ -2061,13 +2094,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/9.jpg" alt="foto Wim Vermeulen">
                 <div>
-                  <h2>Wim Vermeulen</h2>
+                  <h2 class="contactName">Wim Vermeulen</h2>
                   <h3>(761) 983 1194</h3>
                 </div>
               </summary>
@@ -2087,13 +2119,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/19.jpg" alt="foto Annelies Visser">
                 <div>
-                  <h2>Annelies Visser</h2>
+                  <h2 class="contactName">Annelies Visser</h2>
                   <h3>(439) 655 9114</h3>
                 </div>
               </summary>
@@ -2113,13 +2144,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/15.jpg" alt="foto Dirk Visser">
                 <div>
-                  <h2>Dirk Visser</h2>
+                  <h2 class="contactName">Dirk Visser</h2>
                   <h3>(548) 381 4448</h3>
                 </div>
               </summary>
@@ -2139,13 +2169,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/14.jpg" alt="foto Paul Visser">
                 <div>
-                  <h2>Paul Visser</h2>
+                  <h2 class="contactName">Paul Visser</h2>
                   <h3>(303) 722 3431</h3>
                 </div>
               </summary>
@@ -2165,13 +2194,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/17.jpg" alt="foto Jacolien de Vries">
                 <div>
-                  <h2>Jacolien de Vries</h2>
+                  <h2 class="contactName">Jacolien de Vries</h2>
                   <h3>(668) 159 4743</h3>
                 </div>
               </summary>
@@ -2191,13 +2219,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/5.jpg" alt="foto Niek de Vries">
                 <div>
-                  <h2>Niek de Vries</h2>
+                  <h2 class="contactName">Niek de Vries</h2>
                   <h3>(335) 152 1183</h3>
                 </div>
               </summary>
@@ -2217,18 +2244,17 @@
               </ul>
             </details>
           </li>
-
         </ol>
       </li>
-      <li id="W">
+      <li class="letter" id="W">
         <a href="#W">W</a>
         <ol>
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/4.jpg" alt="foto Laurens van der Wal">
                 <div>
-                  <h2>Laurens van der Wal</h2>
+                  <h2 class="contactName">Laurens van der Wal</h2>
                   <h3>(881) 216 5875</h3>
                 </div>
               </summary>
@@ -2248,13 +2274,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/female/12.jpg" alt="foto Kristien Willems">
                 <div>
-                  <h2>Kristien Willems</h2>
+                  <h2 class="contactName">Kristien Willems</h2>
                   <h3>(208) 760 2974</h3>
                 </div>
               </summary>
@@ -2274,13 +2299,12 @@
               </ul>
             </details>
           </li>
-
-          <li>
+          <li class="contact">
             <details>
               <summary>
                 <img src="https://uinames.com/api/photos/male/2.jpg" alt="foto Aad Willems">
                 <div>
-                  <h2>Aad Willems</h2>
+                  <h2 class="contactName">Aad Willems</h2>
                   <h3>(874) 983 3139</h3>
                 </div>
               </summary>
@@ -2302,71 +2326,111 @@
           </li>
         </ol>
       </li>
-      <li id="X">
+      <li class="letter" id="X">
         <a href="#X">X</a>
       </li>
-      <li id="Y">
+      <li class="letter" id="Y">
         <a href="#Y">Y</a>
       </li>
-      <li id="Z">
+      <li class="letter" id="Z">
         <a href="#Z">Z</a>
       </li>
     </ol>
-  </main>
+  </div>
 
   <script>
-    var element = document.createElement('_')
-    var string = ''
-    var arr = []
-    if ('querySelectorAll' in document && 'classList' in element && typeof string.replace === 'function' && typeof arr.includes ===
-      'function') {
-      var list = document.querySelectorAll('div h2')
-      var contacts = document.querySelectorAll('ol>li>ol>li')
-      var contactList = document.querySelector('main ol')
-      var names = []
-      var searchEl =
-        '<form><label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search"></form>'
+    if (typeof document.getElementsByClassName === 'function') { // getElementsByClassName supported from IE9
+      var element = document.createElement('_')
+      var string = ''
+      var arr = []
+      var list = document.getElementsByClassName('contactName')
+      var contacts = document.getElementsByClassName('contact')
+      var contactList = document.getElementById('contactList')
+      var searchEl = document.createElement('form')
+      searchEl.innerHTML =
+        '<label for="search">Zoeken naar contacten</label><input placeholder="Zoeken..." type="search" name="search" id="search">'
+      contactList.parentElement.insertBefore(searchEl, contactList)
 
-      for (var i = 0; i < list.length; i++) {
-        names.push(list[i].textContent)
-      }
-      contactList.insertAdjacentHTML('beforebegin', searchEl)
       alphabet()
+      getShortcuts()
 
-      var searchInput = document.getElementById('search')
-      var form = document.querySelector('form')
-      form.addEventListener('submit', function (event) {
-        event.preventDefault()
-      })
+      var searchInput = document.getElementById('search') // getElementById supported in all browsers
+      var form = document.getElementsByTagName('form')
+      if (typeof document.addEventListener === 'function') { // addEventListener supported from IE9
+        form[0].addEventListener('submit', function (event) {
+          event.preventDefault()
+        })
+        searchInput.addEventListener('input', search)
+      }
 
-      searchInput.addEventListener('input', function () {
+      function search() {
         for (var i = 0; i < contacts.length; i++) {
-          var name = contacts[i].querySelector('h2').innerHTML.toLowerCase().replace(/\s/g, '')
+          var name = contacts[i].querySelector('h2').innerHTML.toLowerCase().replace(/\s/g, '') // supported if addEventListener is supported, feature detection not needed
           var phone = contacts[i].querySelector('h3').innerHTML.replace(/\s/g, '').replace(/[()]/g, '')
-          if (!name.includes(searchInput.value.toLowerCase().replace(/\s/g, '')) && !phone.includes(searchInput.value
-              .toLowerCase().replace(/\s/g, ''))) {
-            contacts[i].classList.add('hidden')
-            contacts[i].style.display = 'none'
+          if (typeof [].includes === 'function') { // includes not supported in IE and other old browsers
+            if (!name.includes(searchInput.value.toLowerCase().replace(/\s/g, '')) && !phone.includes(searchInput.value
+                .toLowerCase().replace(/\s/g, ''))) {
+              contacts[i].className = 'contact hidden'
+            } else {
+              contacts[i].className = 'contact'
+            }
           } else {
-            contacts[i].classList.remove('hidden')
-            contacts[i].style.display = 'block'
+            if (name.indexOf(searchInput.value.toLowerCase().replace(/\s/g, '')) === -1 && phone.indexOf(searchInput.value
+                .toLowerCase().replace(/\s/g, '')) === -1) { // indexOf supported in all browsers
+              contacts[i].className = 'contact hidden'
+            } else {
+              contacts[i].className = 'contact'
+            }
           }
         }
         alphabet()
-      })
+        getShortcuts()
+      }
+
+
 
       function alphabet() {
-        var alphabet = document.querySelectorAll('main>ol>li')
-        alphabet.forEach(function (letter) {
-          var count = letter.querySelectorAll('ol>li:not(.hidden)')
-          if (!count.length) {
-            letter.classList.add('hidden')
-            letter.style.display = 'none'
-          } else {
-            letter.classList.remove('hidden')
-            letter.style.display = 'block'
+        var alphabet = document.querySelectorAll('.letter') // supported if getElementsByClassName is supported, feature detection not needed
+        var contactElements
+        var hiddencount
+        for (var i = 0; i < alphabet.length; i++) {
+          contactElements = alphabet[i].querySelectorAll('.contact')
+          if (contactElements.length === 0) {
+            alphabet[i].className = 'letter hidden'
           }
-        })
+          hiddencount = 0
+          for (var j = 0; j < contactElements.length; j++) {
+            if (contactElements[j].className.indexOf('hidden') >= 0) {
+              hiddencount++
+            }
+            if (hiddencount === contactElements.length) {
+              contactElements[j].parentElement.parentElement.className = 'letter hidden'
+            } else {
+              contactElements[j].parentElement.parentElement.className = 'letter'
+            }
+          }
+        }
+      }
+
+      function getShortcuts() {
+        var noContacts = document.getElementsByClassName('letter hidden')
+        var emptyLetters = []
+        var shortcuts = document.getElementsByClassName('shortcut')
+        for (var i = 0; i < noContacts.length; i++) {
+          emptyLetters.push(noContacts[i].id)
+        }
+
+        for (var i = 0; i < shortcuts.length; i++) {
+          var visible = false
+          for (var j = 0; j < emptyLetters.length; j++) {
+            if (emptyLetters[j] === shortcuts[i].innerHTML) {
+              shortcuts[i].parentElement.className = 'hidden'
+              visible = true
+            } else if (!visible) {
+              shortcuts[i].parentElement.className = ''
+            }
+          }
+        }
       }
     }
   </script>
