@@ -2497,7 +2497,7 @@
     }
     if (typeof document.addEventListener === 'function') { //addEventListener supported from IE9
       window.addEventListener('scroll', function () {
-        if (document.documentElement.scrollTop > 200) {
+        if (document.documentElement.scrollTop > 200 || window.scrollY > 200) {
           backToTop.className = 'fixed'
         } else {
           backToTop.className = ''
