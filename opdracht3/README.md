@@ -38,45 +38,114 @@ In de demo heb ik rekening gehouden met toegankelijkheid voor slechtzienden. Ik 
 
 ### Feature detection
 
-Om ervoor te zorgen dat JavaScript geen errors geeft, heb ik een feature detection toegevoegd die checkt of de functies die ik gebruik in mijn code wel beschikbaar zijn in desbetreffende browser. Zo niet, dan wordt het script niet uitgevoerd. Dit doe ik met de volgende code:
+#### querySelectorAll
 
-```
-var element = document.createElement('_')
-var string = ''
-var arr = []
-if ('querySelectorAll' in document 
-    && 'classList' in element 
-    && typeof string.replace === 'function' 
-    && typeof arr.includes ===
-      'function') {
-  // code...
+Omdat er geen goede crossbrowser alternatief is voor `querySelector`, is mijn belangrijkste check of `querySelector` beschikbaar is in de browser. 
+Vanaf IE9 is `querySelector` volledig ondersteund, waardoor ik alle functies die ook vanaf IE9 ondersteund zijn kan gebruiken in mijn code.
+
+[Browser support](https://caniuse.com/#search=queryselector)
+
+```javascript
+if (typeof document.querySelectorAll === 'function') {
+  // code ...
 }
 ```
+
+#### array.includes
+
+`.includes()` wordt in IE en in oudere browsers niet ondersteund. Een alternatief hiervoor is `.indexOf()`. Hiermee kan ik alsnog zien welke namen niet overeenkomen met de zoekopdracht en deze verbergen.
+
+[Browser support](https://caniuse.com/#search=includes)
+
+```javascript
+if (typeof [].includes === 'function') { 
+  // use .includes
+} else {
+  // use .indexOf
+}
+```
+#### forEach
+
+Vanaf IE10 wordt `forEach()` volledig ondersteund. In IE9 moeten `forEach()` dus worden vervangen door `for` loops. 
+
+[Browser support](https://caniuse.com/#search=foreach)
+
+```javascript
+if (typeof NodeList.prototype.forEach === 'function') { 
+  // use forEach
+} else {
+  // use for loop
+}
+```
+
+#### addEventListener
+
+De 'terug naar boven' knop staat los van de zoekfuncties van de app. Daarom kan ik deze beschikbaar maken in browsers ouder dan IE9. Ik vervang `addEventListener` door `attachEvent` in deze browsers. Omdat `attachEvent` ondersteund wordt tot en met IE8, moet ik deze functie ook detecteren.
+
+[Browser support](https://caniuse.com/#search=addeventlistener)
+
+```javascript
+if (typeof document.addEventListener === 'function') { 
+  // use addEventListener
+} else if (typeof window.attachEvent === 'function') {
+  // use attachEvent
+}
+
+```
+#### CSS 
+
+Wanneer de browser `@supports` en `position: sticky;` ondersteunt, zullen de letters boven de contacten sticky zijn. De fallback is `position: relative;`.
+
+```css
+@supports(position:sticky) {
+  #main li>a {
+    position: sticky;
+    top: -1px;
+  }
+}
+```
+
+Voor de letters navigatie gebruik ik `viewport height` als `font-size`, zodat deze navigatie altijd past.
+
+```css
+.header {
+  font-size: 10px;
+  font-size: 1.6vh;
+}
+```
+
 
 ### Browser ondersteuning
 
 **Browsers**
 ![Browsers](images/browsers.png)
-Aangezien Internet Explorer de HTML tags details en summary nog niet ondersteunt, heb ik getest of de [fallback](https://github.com/tyleruebele/details-shim) wel werkt. Blijkbaar werkt het vanaf IE9. Navigeren op alfabet is nog wel mogelijk.
+Zoals verwacht werkt de zoekfunctionaliteit niet op IE8, maar de 'terug naar boven' knop wel. Op IE10 werkt de zoekfunctionaliteit wel. Alleen werkt `flexbox` hier niet, waardoor de letters in de navigatie niet netjes worden verdeeld over de hoogte.
 
 **Mobiele devices**
 ![Devicelab](images/devicelab.png)
 Op Kindle is navigeren moeilijk. Blijkbaar werkt `position: fixed;` niet op de alfabet navigatie, waardoor deze wegvalt wanneer je scrolt. Op Nexus werken de functies goed. Het enige wat nog niet overal goed gaat is dat het alfabet niet in het scherm past.
 
 ![Mobiele devices](images/mobiel.png)
-Met behulp van [BrowserStack](https://www.browserstack.com/) heb ik op een aantal mobiele devices getest. Opvallend is dat op de meeste devices JavaScript in de browser wordt ondersteund. Op bijvoorbeeld Nokia Lumia 930 is de details / summary fallback toegepast, ook al wordt de zoekfunctie niet ondersteund.
+Met behulp van [BrowserStack](https://www.browserstack.com/) heb ik op een aantal mobiele devices getest. Opvallend is dat op de meeste devices JavaScript in de browser wordt ondersteund.
 
 ### To do
 - [ ] Contactenlijst server side serveren
 - [ ] Contacten kunnen toevoegen / wijzigen / verwijderen
-- [ ] Feedback wanneer er geen contacten zijn gevonden
+- [x] Feedback wanneer er geen contacten zijn gevonden
 - [ ] Alfabet navigatie overal passend maken
 
 
 ## Bronnen
 
-[details-shim](https://github.com/tyleruebele/details-shim)
 
 [Funkify](http://www.funkify.org/)
 
 [BrowserStack](https://www.browserstack.com/)
+
+## Aanpassingen
+- [x] Semantische HTML elementen vervangen.
+- [x] JS browser support verbeterd.
+- [x] 'Terug naar boven' knop toegevoegd.
+- [x] Shim verwijderd.
+- [x] Position sticky toegevoegd.
+- [x] Arrow function vervangen.
