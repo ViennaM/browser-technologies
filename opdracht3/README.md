@@ -16,10 +16,6 @@ De use case waarvan ik een demo heb gemaakt is de contactenlijst. De core functi
 - Responsive
 
 
-**Browser Technologies:**
-- Progressive enhancement (HTML > CSS > JS)
-- Details / summary fallback ([bron](https://github.com/tyleruebele/details-shim))
-
 ### Werking
 
 ![Contactenlijst werking](images/werking.png)
